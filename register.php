@@ -1,3 +1,16 @@
+<?php
+    error_reporting(E_ALL);
+	ini_set("display_errors", 1);
+    include_once('include.php');
+
+    if(!empty($_POST)) {
+        extract($_POST);
+        if(isset($_POST['inscription'])) {
+            [$erreur] = $_INSCRIPTION->inscription_user($identifiant, $mail, $password);
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>

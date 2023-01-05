@@ -2,6 +2,13 @@
     error_reporting(E_ALL);
 	ini_set("display_errors", 1);
     include_once('include.php');
+
+    if(!empty($_POST)) {
+        extract($_POST);
+        if(isset($_POST['connexion'])) {
+            [$erreur] = $_CONNEXION->connexion_user($identifiant, $password);
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +31,8 @@
                 <h1>Bon retour parmi nous ! 👋</h1>
                 <p>Renseignez vos informations pour continuer sur le site.</p>
                 <label for="identifiant">Votre identifiant</label>
+
+                <?php if(isset($erreur)) { echo $erreur; } ?>
                 <input type="text" name="identifiant" id="identifiant" maxlength="20">
 
                 <label for="password">Votre mot de passe</label>
@@ -31,7 +40,7 @@
                     <input type="password" name="password" id="password" maxlength="32">
                     <span class="material-icons-outlined" onclick='toggle()'>visibility</span>
                 </div>
-                <a href="register.php">J’ai oublié mon mot de passe</a>
+                <a href="register.php">J'ai oublié mon mot de passe</a>
 
                 <input type="submit" name="connexion" value="Se connecter">
 
