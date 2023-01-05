@@ -1,4 +1,4 @@
-const passInput = document.querySelector(".password");
+const passInput = document.querySelector("#password");
 const percentBar = document.querySelector(".strenght-percent span");
 const passLabel = document.querySelector(".strenght-label");
 

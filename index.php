@@ -26,12 +26,15 @@
                 <input type="text" name="identifiant" id="identifiant" maxlength="20">
 
                 <label for="password">Votre mot de passe</label>
-                <input type="password" name="password" id="password" maxlength="32">
-                <a href="#">J’ai oublié mon mot de passe</a>
+                <div class="div-pass">
+                    <input type="password" name="password" id="password" maxlength="32">
+                    <span class="material-icons-outlined" onclick='toggle()'>visibility</span>
+                </div>
+                <a href="register.php">J’ai oublié mon mot de passe</a>
 
                 <input type="submit" name="connexion" value="Se connecter">
 
-                <p>Vous n'avez pas de compte ? <a href="register.php">S'inscrire</a></p>
+                <p class="no-account">Je n'ai pas de compte ? <a href="register.php">S'inscrire</a></p>
             </form>
         </div>
         <div class="right">
@@ -42,6 +45,8 @@
                 </div>
             </div>
         </div>
+
+        <script src="./js/password.js"></script>
         
     </body>
 

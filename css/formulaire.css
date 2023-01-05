@@ -24,6 +24,10 @@ body {
     padding: 1rem;
 }
 
+.left form h1 {
+    color: var(--c-dark-blue);
+}
+
 .left form label {
     margin: 20px 0 0 0;
 }
@@ -42,6 +46,7 @@ body {
 .left form input {
     margin: 10px auto;
     display: flex;
+    padding: 5px;
     width: 100%;
     height: 40px;
     background-color: white;
@@ -50,8 +55,20 @@ body {
     border-radius: 10px;
 }
 
+.left form .div-pass {
+    position: relative;
+}
+
+.left form .div-pass .material-icons-outlined {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
 .left form input[type='submit'] {
-    margin: 40px auto;
+    margin: 40px 0 10px 0;
     display: flex;
     width: 100%;
     height: 40px;
@@ -63,6 +80,12 @@ body {
     border: none;
     background: radial-gradient(50% 3796.94% at 50% 50%, #597EFF 0%, #59C3FF 87.27%);
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.left form .no-account {
+    margin: 0 auto;
+    color: var(--c-dark-blue);
 }
 
 .right {
