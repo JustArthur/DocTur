@@ -37,6 +37,7 @@ body {
 
 .left form h1 {
     color: var(--c-dark-blue);
+    font-size: max(2.3vw, 15px);
 }
 
 .left form label {
@@ -45,7 +46,6 @@ body {
 
 .left form p {
     color: var(--c-blue);
-    width: max-content;
 }
 
 .left form a {
@@ -136,6 +136,7 @@ body {
     background: var(--c-radial-gradient);
     border-radius: 10px;
     cursor: pointer;
+    justify-content: center;
 }
 
 .left form .account {
