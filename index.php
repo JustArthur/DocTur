@@ -10,12 +10,13 @@
 
     <?php require_once('include/link.php') ?>
 
-    <link rel="stylesheet" href="css/initialisations.css">
     <link rel="stylesheet" href="css/formulaire.css">
     <link rel="stylesheet" href="css/cookie.css">
 
     <title>Connexion à DocTur</title>
+
 </head>
+
     <body>
         <form method="POST">
             <label for="identifiant">Votre identifiant</label>
@@ -29,4 +30,5 @@
             <p>Vous n'avez pas de compte ? <a href="register.php">S'inscrire</a></p>
         </form>
     </body>
+    
 </html>
