@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    /*!--------- Couleur du background ---------!*/
+    --c-background: #F6F6FF;
+
+    /*!--------- Couleurs ---------!*/
+    --c-white: #FFFFFF;
+    --c-grey: #999999;
+    --c-blue: #3246D3;
+    --c-light-blue: #93D8FF;
+    --c-dark-blue: #1A1B2D;
+    --c-yellow: #ffbb55;
+
+    /*!--------- Couleurs des notifications ---------!*/
+    --c-success: #008F0E;
+    --c-warning: #ffbb55;
+    --c-error: #CF0000;
+
+    /*!--------- Gradient ---------!*/
+    --c-linear-gradient: linear-gradient(99.48deg, #59FFB9 50.5%, #6759FF 98.6%);
+    --c-radial-gradient: radial-gradient(50% 3796.94% at 50% 50%, #597EFF 0%, #59C3FF 87.27%);
+
+    /*!--------- Boîtes d'ombres ---------!*/
+    --c-box-shadow-grey: 5px 5px 20px var(--c-grey);
+    --c-box-shadow-blue : 5px 5px 20px var(--c-blue);
+}
+
+.dark-theme {
+    /*!--------- Couleur du background ---------!*/
+    --c-background: #212121;
+
+    /*!--------- Couleurs ---------!*/
+    --c-white: #1A1A1A;
+    --c-grey: #999999;
+    --c-blue: #3246D3;
+    --c-light-blue: #93D8FF;
+    --c-dark-blue: #1A1B2D;
+    --c-yellow: #ffbb55;
+
+    /*!--------- Couleurs des notifications ---------!*/
+    --c-success: #008F0E;
+    --c-warning: #ffbb55;
+    --c-error: #CF0000;
+
+    /*!--------- Gradient ---------!*/
+    --c-linear-gradient: linear-gradient(99.48deg, #59FFB9 50.5%, #6759FF 98.6%);
+    --c-radial-gradient: radial-gradient(50% 3796.94% at 50% 50%, #597EFF 0%, #59C3FF 87.27%);
+
+    /*!--------- Boîtes d'ombres ---------!*/
+    --c-box-shadow-grey: 5px 5px 20px var(--c-grey);
+    --c-box-shadow-blue : 5px 5px 20px var(--c-blue);
+}
