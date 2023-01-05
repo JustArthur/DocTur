@@ -1,6 +1,6 @@
 const passInput = document.querySelector("#password");
-const percentBar = document.querySelector(".strenght-percent span");
-const passLabel = document.querySelector(".strenght-label");
+const percentBar = document.querySelector(".password-pourcent span");
+const passLabel = document.querySelector(".password-label");
 
 
 passInput.addEventListener("input", handlePassInput);
@@ -36,11 +36,11 @@ function handlePassInput(e) {
 
 function addClass(className) {
     
-    percentBar.classList.remove("very-weak");
-    percentBar.classList.remove("weak");
-    percentBar.classList.remove("average");
-    percentBar.classList.remove("strong");
-    percentBar.classList.remove("very-strong");
+    percentBar.classList.remove("very-weak"); //5
+    percentBar.classList.remove("weak"); //30
+    percentBar.classList.remove("average"); //60
+    percentBar.classList.remove("strong"); //80
+    percentBar.classList.remove("very-strong"); //100
 
     if(className) {
         percentBar.classList.add(className);

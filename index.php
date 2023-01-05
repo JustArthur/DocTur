@@ -1,7 +1,7 @@
 <?php
     error_reporting(E_ALL);
 	ini_set("display_errors", 1);
-    include_once('include/include.php');
+    include_once('include.php');
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +27,7 @@
                 <input type="text" name="identifiant" id="identifiant" maxlength="20">
 
                 <label for="password">Votre mot de passe</label>
-                <div class="div-pass">
+                <div class="div-input">
                     <input type="password" name="password" id="password" maxlength="32">
                     <span class="material-icons-outlined" onclick='toggle()'>visibility</span>
                 </div>
@@ -35,7 +35,7 @@
 
                 <input type="submit" name="connexion" value="Se connecter">
 
-                <p class="no-account">Je n'ai pas de compte ? <a href="register.php">S'inscrire</a></p>
+                <p class="account">Je n'ai pas de compte ? <a href="register.php">S'inscrire</a></p>
             </form>
         </div>
         <div class="right">

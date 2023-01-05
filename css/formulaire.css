@@ -22,7 +22,7 @@ body {
 }
 
 .left .logo span {
-    background: var(--c-radial-gradient);
+    background: var(--c-linear-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -54,7 +54,7 @@ body {
     text-decoration: underline;
 }
 
-.left form #identifiant, #password {
+.left form #identifiant, #password, #mail {
     margin: 10px auto;
     display: flex;
     padding: 20px;
@@ -64,13 +64,57 @@ body {
     outline: none;
     border: none;
     border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(153, 153, 153, 0.25);
 }
 
-.left form .div-pass {
+.left form .password-force .password-pourcent {
+    margin: 5px auto;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.left form .password-force .password-pourcent span {
+    display: block;
+    height: 100%;
+    transition: all 0.4s;
+}
+
+.left form .password-force .password-label {
+    color: var(--c-blue);
+}
+
+.very-weak {
+    width: 5%;
+    background: var(--c-dark-blue);
+}
+
+.weak {
+    width: 30%;
+    background: var(--c-error);
+}
+
+.average {
+    width: 60%;
+    background: var(--c-warning);
+}
+
+.strong {
+    width: 80%;
+    background: var(--c-success);
+}
+
+.very-strong {
+    width: 100%;
+    background: var(--c-blue);
+}
+
+.left form .div-input {
     position: relative;
 }
 
-.left form .div-pass .material-icons-outlined {
+.left form .div-input .material-icons-outlined, .chiffre {
     position: absolute;
     top: 50%;
     right: 10px;
@@ -94,7 +138,7 @@ body {
     cursor: pointer;
 }
 
-.left form .no-account {
+.left form .account {
     margin: 0 auto;
     color: var(--c-dark-blue);
 }
