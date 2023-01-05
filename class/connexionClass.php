@@ -19,18 +19,14 @@
                 $verif_password->execute(array($identifiant));
                 $verif_password = $verif_password->fetch();
 
-                $erreur = var_dump($verif_password);
-
                 if(isset($verif_password['password'])) {
                     if(!password_verify($password, $verif_password['password'])) {
                         $this->valid = false;
                         $this->erreur = "Le mot de passe est incorrect";
                     }
-
-                    else {
-                        $this->valid = false;
-                        $this->erreur = "Aucun utilisateur n'a cet identifiant.";
-                    }
+                } else {
+                    $this->valid = false;
+                    $this->erreur = "Aucun utilisateur n'a cet identifiant.";
                 }
 
                 if($this->valid) {
@@ -40,16 +36,16 @@
 
                     if(isset($connexion['id'])) {
                         $_SESSION['utilisateur'] = array(
-                            $connexion_user['pseudo'],
-                            $connexion_user['nom'],
-                            $connexion_user['prenom'],
-                            $connexion_user['localisation'],
-                            $connexion_user['biographie'],
-                            $connexion_user['email'],
-                            $connexion_user['avatar'],
-                            $connexion_user['banniere'],
-                            $connexion_user['add-friend'],
-                            $connexion_user['show-loca']);
+                            $connexion['pseudo'],
+                            $connexion['nom'],
+                            $connexion['prenom'],
+                            $connexion['localisation'],
+                            $connexion['biographie'],
+                            $connexion['email'],
+                            $connexion['avatar'],
+                            $connexion['banniere'],
+                            $connexion['add-friend'],
+                            $connexion['show-loca']);
 
                         header('Location: ./pages/panel.php');
                         exit;
