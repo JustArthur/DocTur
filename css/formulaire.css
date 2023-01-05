@@ -16,6 +16,55 @@ body {
 
 }
 
+.left form {
+    margin: auto;
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.left form label {
+    margin: 20px 0 0 0;
+}
+
+.left form p {
+    color: var(--c-blue);
+    width: max-content;
+}
+
+.left form a {
+    font-size: 12px;
+    width: max-content;
+    text-decoration: underline;
+}
+
+.left form input {
+    margin: 10px auto;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.left form input[type='submit'] {
+    margin: 40px auto;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    background: radial-gradient(50% 3796.94% at 50% 50%, #597EFF 0%, #59C3FF 87.27%);
+    border-radius: 10px;
+}
+
 .right {
     margin: auto;
     display: flex;
@@ -39,4 +88,36 @@ body {
     background: rgba(255, 255, 255, 0.145);
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.03);
     backdrop-filter: blur(27.5333px);
+}
+
+.right .desc .slogan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+}
+
+.right .desc .slogan .play-svg {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: 70px;
+    height: auto;
+    fill: white;
+    vertical-align: middle;
+}
+
+.right .desc .slogan h1 {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.right .desc .slogan h1 span {
+    color: black;
 }
