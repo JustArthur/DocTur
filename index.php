@@ -32,7 +32,7 @@
             </form>
         </div>
         <div class="right">
-            <img src="./images/public/fond-droit.png">
+            <div class="desc"></div>
         </div>
         
     </body>

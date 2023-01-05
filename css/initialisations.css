@@ -9,6 +9,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+svg {
+    vertical-align: middle;
+}
+
 :root {
     /*!--------- Couleur du background ---------!*/
     --c-background: #F6F6FF;

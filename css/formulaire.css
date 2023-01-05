@@ -4,7 +4,6 @@ body {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    background-color: red;
 }
 
 .left {
@@ -23,4 +22,21 @@ body {
     width: 100%;
     height: 100vh;
     position: relative;
+    background: url(../images/public/fond-droit.svg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+
+.right .desc {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: rgba(255, 255, 255, 0.145);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.03);
+    backdrop-filter: blur(27.5333px);
 }
