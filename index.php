@@ -18,7 +18,7 @@
     <?php require_once('include/link.php') ?>
 
     <link rel="stylesheet" href="css/formulaire.css">
-    <link rel="stylesheet" href="css/cookie.css">
+    <link rel="stylesheet" href="css/notification.css">
 
     <title>Connexion à DocTur</title>
 

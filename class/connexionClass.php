@@ -22,11 +22,59 @@
                 if(isset($verif_password['password'])) {
                     if(!password_verify($password, $verif_password['password'])) {
                         $this->valid = false;
-                        $this->erreur = "Le mot de passe est incorrect";
+                        $this->erreur = '
+                        <ul class="notifications">
+                            <li class="toast error">
+                                <div class="column">
+                                    <span class="material-icons-round icon-notif">error</span>
+                                    <span class="message-notif">Mot de passe incorrect.</span>
+                                </div>
+                                <span class="material-icons-outlined icon-notif close" onclick="remove()">close</span>
+                            </li>
+                        </ul>
+                        <script>
+                            const toast = document.querySelector(".toast");
+    
+                            function hideToast() {
+                                setTimeout(function() {
+                                    toast.classList.add("hide")
+                                }, 5000);
+                            }
+    
+                            function remove() {
+                                toast.classList.add("hide");
+                            }
+    
+                            hideToast();
+                        </script>';
                     }
                 } else {
                     $this->valid = false;
-                    $this->erreur = "Aucun utilisateur n'a cet identifiant.";
+                    $this->erreur = '
+                    <ul class="notifications">
+                        <li class="toast error">
+                            <div class="column">
+                                <span class="material-icons-round icon-notif">error</span>
+                                <span class="message-notif">Aucun utilisateur avec ce pseudo</span>
+                            </div>
+                            <span class="material-icons-outlined icon-notif close" onclick="remove()">close</span>
+                        </li>
+                    </ul>
+                    <script>
+                        const toast = document.querySelector(".toast");
+
+                        function hideToast() {
+                            setTimeout(function() {
+                                toast.classList.add("hide")
+                            }, 5000);
+                        }
+
+                        function remove() {
+                            toast.classList.add("hide");
+                        }
+
+                        hideToast();
+                    </script>';
                 }
 
                 if($this->valid) {
