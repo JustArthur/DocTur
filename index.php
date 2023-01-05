@@ -18,17 +18,23 @@
 </head>
 
     <body>
-        <form method="POST">
-            <label for="identifiant">Votre identifiant</label>
-            <input type="text" name="identifiant" id="identifiant" maxlength="20">
+        <div class="left">
+            <form method="POST">
+                <label for="identifiant">Votre identifiant</label>
+                <input type="text" name="identifiant" id="identifiant" maxlength="20">
 
-            <label for="password">Votre mot de passe</label>
-            <input type="password" name="password" id="password" maxlength="32">
+                <label for="password">Votre mot de passe</label>
+                <input type="password" name="password" id="password" maxlength="32">
 
-            <input type="submit" value="Se connecter">
+                <input type="submit" value="Se connecter">
 
-            <p>Vous n'avez pas de compte ? <a href="register.php">S'inscrire</a></p>
-        </form>
+                <p>Vous n'avez pas de compte ? <a href="register.php">S'inscrire</a></p>
+            </form>
+        </div>
+        <div class="right">
+            aaaa
+        </div>
+        
     </body>
-    
+
 </html>

@@ -6,3 +6,22 @@ body {
     justify-content: space-between;
     background-color: red;
 }
+
+.left {
+    margin: auto;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: var(--c-background);
+
+}
+
+.right {
+    margin: auto;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: url(../images/public/fond-droit.png);
+}
