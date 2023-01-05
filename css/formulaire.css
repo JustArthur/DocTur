@@ -182,21 +182,22 @@ body {
 .right .desc .slogan .slog-item {
     margin: auto;
     display: flex;
-    width: 50%;
+    width: max-content;
     align-items: center;
     gap: 30px;
 }
 
 .right .desc .slogan .slog-item .play-svg {
     width: 50px;
-    height: auto;
     fill: white;
     vertical-align: bottom;
 }
 
 .right .desc .slogan .slog-item h1 {
     color: white;
-} 
+    font-size: max(3vw,20px);
+    width: max-content;
+}
 
 .right .desc .slogan .slog-item h1 span {
     color: black;
