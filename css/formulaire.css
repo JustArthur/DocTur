@@ -13,7 +13,18 @@ body {
     height: 100vh;
     position: relative;
     background-color: var(--c-background);
+}
 
+.left .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.left .logo span {
+    background: var(--c-radial-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .left form {
@@ -43,7 +54,7 @@ body {
     text-decoration: underline;
 }
 
-.left form input {
+.left form #identifiant, #password {
     margin: 10px auto;
     display: flex;
     padding: 20px;
@@ -78,7 +89,7 @@ body {
     font-weight: bold;
     outline: none;
     border: none;
-    background: radial-gradient(50% 3796.94% at 50% 50%, #597EFF 0%, #59C3FF 87.27%);
+    background: var(--c-radial-gradient);
     border-radius: 10px;
     cursor: pointer;
 }

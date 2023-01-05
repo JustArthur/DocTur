@@ -19,6 +19,7 @@
 
     <body>
         <div class="left">
+            <h1 class="logo">DOC<span>TUR</span></h1>
             <form method="POST">
                 <h1>Bon retour parmi nous ! 👋</h1>
                 <p>Renseignez vos informations pour continuer sur le site.</p>
