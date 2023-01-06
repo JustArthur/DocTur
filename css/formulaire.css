@@ -41,6 +41,7 @@ body {
 
 .left form label {
     margin: 20px 0 0 0;
+    font-weight: 700;
 }
 
 .left form p {
@@ -48,7 +49,7 @@ body {
 }
 
 .left form a {
-    font-size: 12px;
+    font-size: 15px;
     width: max-content;
     text-decoration: underline;
 }
