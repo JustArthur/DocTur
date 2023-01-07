@@ -36,7 +36,7 @@ body {
 
 .left form h1 {
     color: var(--c-dark-blue);
-    font-size: max(2.3vw, 15px);
+    font-size: max(2.3vw, 18px);
 }
 
 .left form label {
@@ -202,4 +202,14 @@ body {
 
 .right .desc .slogan .slog-item h1 span {
     color: black;
+}
+
+@media (max-width:860px) {
+    .right {
+        display: none;
+    }
+
+    .left form {
+        width: 90%;
+    }
 }
