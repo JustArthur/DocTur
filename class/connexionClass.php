@@ -84,6 +84,7 @@
 
                     if(isset($connexion['id'])) {
                         $_SESSION['utilisateur'] = array(
+                            $connexion['id'],
                             $connexion['pseudo'],
                             $connexion['nom'],
                             $connexion['prenom'],

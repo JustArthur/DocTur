@@ -1,0 +1,7 @@
+@import url('initialisations.css');
+
+body {
+    margin: 0 auto;
+    display: flex;
+    background-color: var(--c-background);
+}
