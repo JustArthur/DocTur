@@ -31,7 +31,7 @@ aside ul.list {
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 2vh;
 }
 
 ul.list .list-item {
@@ -39,15 +39,62 @@ ul.list .list-item {
     display: flex;
     width: 90%;
     height: 70px;
-    padding: 5px;
     align-items: center;
+    border-radius: 10px;
+    color: white;
+    position: relative;
+}
+
+ul.list .btn-deco {
+    position: absolute;
+    bottom: 5%;
+}
+
+ul.list .list-item:active:after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    width: 5px;
+    height: 100%;
+    background: var(--c-dark-blue);
+    border-radius: 10px;
+}
+
+ul.list .list-item:active {
+    background-color: var(--c-dark-blue);
+}
+
+ul.list .list-item:hover {
     background-color: var(--c-dark-blue);
 }
 
 ul.list .list-item a {
+    margin: auto;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    color: var(--c-grey);
+}
+
+ul.list .list-item a:hover {
     color: white;
 }
 
-ul.list .list-item:last-child {
-    margin-top: auto;
+ul.list .list-item a .icon {
+    margin: auto;
+    width: 30%;
+    height: 100%;
+    position: relative;
+}
+
+.list-item a .icon span {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+
+ul.list .list-item a .lien {
+    margin: auto;
+    width: 70%;
 }
