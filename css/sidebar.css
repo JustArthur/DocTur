@@ -47,6 +47,9 @@ ul.list .list-item {
 
 ul.list .btn-deco {
     position: absolute;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%);
     bottom: 5%;
 }
 
