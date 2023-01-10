@@ -9,6 +9,7 @@ aside {
     display: flex;
     flex-direction: column;
     background-color: white;
+    transition: all 0.3s ease-in-out;
 }
 
 aside .titre h1 {
@@ -100,4 +101,24 @@ ul.list .list-item a .icon {
 ul.list .list-item a .lien {
     margin: auto;
     width: 70%;
+}
+
+
+@media screen and (max-width:950px) {
+    aside {
+        width: 100px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    aside .titre h1 {
+        font-size: 20px;
+    }
+
+    ul.list .list-item a .lien {
+        display: none;
+    }
+
+    ul.list .list-item:active:after {
+        right: -20px;
+    }
 }
