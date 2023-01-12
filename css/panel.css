@@ -139,9 +139,113 @@ body {
 .global .dossiers {
     margin: 50px auto 0;
     display: flex;
-    width: 100%;
+    flex-direction: column;
     padding: 1rem;
-    background-color: red;
+    width: 100%;
+}
+
+.global .dossiers .titre {
+    padding: 1rem;
+}
+
+.dossiers .cards {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.card {
+    width: 280px;
+    height: 180px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 5px 5px 20px rgba(153, 153, 153, 0.4);
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+    font-family: 'Poppins';
+    font-style: normal;
+    position: relative;
+    color: #1A1B2D;
+}
+
+.card svg.icon-folder {
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.card h2{
+    position: absolute;
+    top: 77px;
+    left: 20px;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 38px;
+}
+
+.card h5.prof {
+    position: absolute;
+    top: 115px;
+    left: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 15px;
+    color: #999999;
+}
+
+.card span.star {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    right: 40px;
+    color: #FFBB55;
+}
+
+.card span.menu {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    right: 8px;
+    color: #999999;
+    transition: all 300ms ease-in-out;
+}
+
+.card h5.count {
+    position: absolute;
+    bottom: 5px;
+    right: 13px;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 15px;
+    color: #999999;
+    text-align: right;
+}
+
+.add {
+    display: flex;
+    width: 100%;
+    border: 3px dashed #3246D3;
+    background: none;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    color: #3246D3;
+    box-shadow: none;
+}
+
+.card:hover {
+    box-shadow: none;
+    background: #3246D3;
+    color: #fff;
+    transition: all 300ms ease-in-out;
+}
+
+.card:hover span.menu {
+    color: #fff;
 }
 
 
@@ -154,5 +258,11 @@ body {
 
     .barre-recherche form.search .div .barre {
         width: 300px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .add {
+        width: 280px;
     }
 }

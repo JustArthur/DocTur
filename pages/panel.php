@@ -60,7 +60,55 @@
         </div>
 
         <div class="dossiers">
-            
+            <h1 class="titre">Mes dossiers</h1>
+            <div class="cards">
+                <div class="card">
+                    <svg class="icon-folder" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="60px" height="60px"><path fill="#ffa000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v24c0,2.2,1.8,4,4,4h29.7L44,29V16C44,13.8,42.2,12,40,12z"/><path fill="#ffca28" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"/></svg>
+                    <h2>Cybersécurité</h2>
+                    <h5 class="prof">Mr. Pétasse</h5>
+                    <span class="material-icons-outlined star">star</span>
+                    <span class="material-icons-outlined menu">more_vert</span>
+                    <h5 class="count">24 Fichiers</h5>
+                </div>
+
+                <div class="card">
+                    <svg class="icon-folder" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="60px" height="60px"><path fill="#ffa000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v24c0,2.2,1.8,4,4,4h29.7L44,29V16C44,13.8,42.2,12,40,12z"/><path fill="#ffca28" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"/></svg>
+                    <h2>Réseaux</h2>
+                    <h5 class="prof">Mr. Fenêtre</h5>
+                    <span class="material-icons-outlined star">star</span>
+                    <span class="material-icons-outlined menu">more_vert</span>
+                    <h5 class="count">16 Fichiers</h5>
+                </div>
+
+                <div class="card">
+                    <svg class="icon-folder" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="60px" height="60px"><path fill="#ffa000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v24c0,2.2,1.8,4,4,4h29.7L44,29V16C44,13.8,42.2,12,40,12z"/><path fill="#ffca28" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"/></svg>
+                    <h2>Développement</h2>
+                    <h5 class="prof">Mr. Seranno</h5>
+                    <span class="material-icons-outlined star">star_border</span>
+                    <span class="material-icons-outlined menu">more_vert</span>
+                    <h5 class="count">34 Fichiers</h5>
+                </div>
+
+                <div class="card">
+                    <svg class="icon-folder" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="60px" height="60px"><path fill="#ffa000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v24c0,2.2,1.8,4,4,4h29.7L44,29V16C44,13.8,42.2,12,40,12z"/><path fill="#ffca28" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"/></svg>
+                    <h2>CEJM</h2>
+                    <h5 class="prof">Mme Maison</h5>
+                    <span class="material-icons-outlined star">star_border</span>
+                    <span class="material-icons-outlined menu">more_vert</span>
+                    <h5 class="count">5 Fichiers</h5>
+                </div>
+
+                <div class="card">
+                    <svg class="icon-folder" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="60px" height="60px"><path fill="#ffa000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v24c0,2.2,1.8,4,4,4h29.7L44,29V16C44,13.8,42.2,12,40,12z"/><path fill="#ffca28" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"/></svg>
+                    <h2>Anglais</h2>
+                    <h5 class="prof">Mme Codet</h5>
+                    <span class="material-icons-outlined star">star_border</span>
+                    <span class="material-icons-outlined menu">more_vert</span>
+                    <h5 class="count">6 Fichiers</h5>
+                </div>
+
+                <div class="card add">+ Ajouter un dossier</div>
+            </div>
         </div>
     </section>
     
