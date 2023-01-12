@@ -136,6 +136,15 @@ body {
 }
 
 
+.global .dossiers {
+    margin: 50px auto 0;
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    background-color: red;
+}
+
+
 
 @media screen and (max-width:950px) {
     .global {
