@@ -18,6 +18,7 @@ aside .titre h1 {
     left: 50%;
     transform: translate(-50%);
     text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
 }
 
 aside .titre h1 span {
@@ -61,7 +62,8 @@ ul.list .list-item:active:after {
     width: 5px;
     height: 100%;
     background: var(--c-dark-blue);
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 ul.list .list-item:active {
@@ -112,6 +114,7 @@ ul.list .list-item a .lien {
 
     aside .titre h1 {
         font-size: 20px;
+        transition: all 0.3s ease-in-out;
     }
 
     ul.list .list-item a .lien {

@@ -21,17 +21,129 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-
-
-
-
-@media screen and (max-width:1085px) {
-    
+.barre-recherche {
+    margin: 10px auto 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }
+
+.barre-recherche form.search {
+    margin: auto;
+    display: flex;
+    width: 100%;
+    gap: 30px;
+}
+
+.barre-recherche form.search .div {
+    position: relative;
+}
+
+.barre-recherche form.search .div .barre {
+    width: 300px;
+    height: 55px;
+    background: #FFFFFF;
+    padding: 20px;
+    padding-left: 50px;
+    box-shadow: 5px 5px 20px rgba(199, 199, 199, 0.4);
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+.barre-recherche form.search .div .icon {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: var(--c-grey);
+}
+
+.barre-recherche form.search .btn-search {
+    width: 100%;
+    max-width: 180px;
+    height: 55px;
+    background: var(--c-blue);
+    box-shadow: 5px 5px 20px rgba(50, 70, 211, 0.4);
+    border-radius: 10px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.barre-recherche form.search .btn-search:hover {
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.barre-recherche .profil {
+    margin: auto;
+    display: flex;
+    width: 200px;
+    padding: 5px;
+    gap: 8px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.barre-recherche .profil .message {
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.barre-recherche .profil .message svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.barre-recherche .profil .settings {
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.barre-recherche .profil .settings svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.barre-recherche .profil .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.barre-recherche .profil .avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
 
 @media screen and (max-width:950px) {
     .global {
         margin-left: 100px;
         transition: all 0.3s ease-in-out;
+    }
+
+    .barre-recherche form.search .div .barre {
+        width: 300px;
     }
 }

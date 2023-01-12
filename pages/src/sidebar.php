@@ -44,7 +44,7 @@
                 </a>
             </li>
             <li class="list-item btn-deco">
-                <a href="#">
+                <a href="deconnexion.php">
                     <div class="icon">
                         <span class="material-symbols-rounded">logout</span>
                     </div>
