@@ -86,11 +86,13 @@ body {
 .barre-recherche .profil {
     margin: auto;
     display: flex;
-    width: 200px;
     padding: 5px;
     gap: 8px;
     justify-content: flex-end;
     align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px rgba(199, 199, 199, 0.4);
 }
 
 .barre-recherche .profil .message {
