@@ -25,6 +25,7 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    position: relative;
 }
 
 .barre-recherche form.search {
@@ -86,7 +87,9 @@ body {
 }
 
 .barre-recherche .profil {
-    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     padding: 5px;
     gap: 8px;
