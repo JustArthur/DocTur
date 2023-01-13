@@ -25,7 +25,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
-    <title>Bienvenue, </title>
+    <title>Bienvenue <?= $_SESSION['utilisateur'][1]?> 👋</title>
 </head>
 <body> 
 
