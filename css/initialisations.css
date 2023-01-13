@@ -36,7 +36,7 @@ svg {
 
     /*!--------- Boîtes d'ombres ---------!*/
     --c-box-shadow-grey: 5px 5px 20px var(--c-grey);
-    --c-box-shadow-blue : 5px 5px 20px var(--c-blue);
+    --c-box-shadow-blue : 5px 5px 20px rgba(50,70,211, 0.4);
 }
 
 .dark-theme {

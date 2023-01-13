@@ -4,7 +4,7 @@
         </div>
         <ul class="list">
             <li class="list-item">
-                <a href="#">
+                <a href="panel.php">
                     <div class="icon">
                         <span class="material-symbols-rounded">dashboard</span>
                     </div>

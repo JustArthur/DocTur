@@ -84,17 +84,18 @@
 
                     if(isset($connexion['id'])) {
                         $_SESSION['utilisateur'] = array(
-                            $connexion['id'],
-                            $connexion['pseudo'],
-                            $connexion['nom'],
-                            $connexion['prenom'],
-                            $connexion['localisation'],
-                            $connexion['biographie'],
-                            $connexion['email'],
-                            $connexion['avatar'],
-                            $connexion['banniere'],
-                            $connexion['add-friend'],
-                            $connexion['show-loca']);
+                            $connexion['id'], //0
+                            $connexion['pseudo'], //1
+                            $connexion['nom'], //2
+                            $connexion['prenom'], //3
+                            $connexion['localisation'], //4
+                            $connexion['biographie'], //5
+                            $connexion['email'], //6
+                            $connexion['avatar'], //7
+                            $connexion['banniere'], //8
+                            $connexion['add-friend'], //9
+                            $connexion['show-loca'], //10
+                            $connexion['rang']); //11
 
                         header('Location: ./pages/panel.php');
                         exit;
