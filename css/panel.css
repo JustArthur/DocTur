@@ -159,6 +159,10 @@ body {
     gap: 20px;
 }
 
+.dossiers .cards a {
+    color: #1A1B2D;
+}
+
 .card {
     width: 280px;
     height: 180px;
@@ -244,6 +248,10 @@ body {
     background: #3246D3;
     color: #fff;
     transition: all 300ms ease-in-out;
+}
+
+.card:hover a {
+    color: #fff;
 }
 
 .card:hover span.menu {
