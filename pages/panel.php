@@ -100,6 +100,24 @@
                 <a href="newFolder.php"><div class="card add">+ Ajouter un dossier</div></a>
             </div>
         </div>
+
+
+        <div class="ajouts">
+            <h1 class="titre">Mes derniers ajouts</h1>
+            <div class="liste-ajouts">
+                <div class="ligne">
+                    <div class="icone"><img src="../images/public/word.svg" alt=""></div>
+                    <div class="titre">Interstellar.docx</div>
+                    <div class="taille">14.05 Mo</div>
+                    <div class="date">Ajouté le <span style="color: var(--c-blue);"> 15 décembre 2022</span></div>
+                    <div class="download"></div>
+                </div>
+                <div class="ligne"></div>
+                <div class="ligne"></div>
+                <div class="ligne"></div>
+                <div class="ligne"></div>            
+            </div>
+        </div>
     </section>
     
 </body>
