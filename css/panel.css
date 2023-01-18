@@ -294,12 +294,13 @@ body {
     background-color: white;
     border-radius: 10px;
     gap: 10px;
+    padding: 5px;
     box-shadow: 5px 5px 20px rgba(153, 153, 153, 0.4);
 }
 
 .ajouts .liste-ajouts .ligne .icone {
     display: block;
-    width: 50px;
+    width: 40px;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -310,8 +311,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70%;
-    height: 70%;
+    width: 100%;
+    height: 100%;
 }
 
 .ajouts .liste-ajouts .ligne .titre {
@@ -330,7 +331,6 @@ body {
 .ajouts .liste-ajouts .ligne .download {
     margin: auto;
     display: flex;
-    background-color: forestgreen;
 }
 
 .ajouts .liste-ajouts .ligne .download button {
@@ -339,6 +339,16 @@ body {
     background: #3246D3;
     box-shadow: 5px 5px 20px rgba(50, 70, 211, 0.4);
     border-radius: 6px;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.ajouts .liste-ajouts .ligne .download button.tel {
+    display: none;
+    width: 35px;
+    height: 35px;
 }
 
 
@@ -350,6 +360,11 @@ body {
 @media screen and (max-width:1040px) {
     .ajouts .liste-ajouts .ligne {
         flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .ajouts .liste-ajouts .ligne .date {
+        display: none;
     }
 }
 
@@ -364,8 +379,18 @@ body {
     }
 }
 
-/* @media screen and (max-width:800px) {
-    .add {
-        width: 280px;
+@media screen and (max-width:605px) {
+    .ajouts .liste-ajouts .ligne .taille {
+        display: none;
     }
-} */
+}
+
+@media screen and (max-width:525px) {
+    .ajouts .liste-ajouts .ligne .download button {
+        display: none;
+    }
+
+    .ajouts .liste-ajouts .ligne .download button.tel {
+        display: block;
+    }
+}

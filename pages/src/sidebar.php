@@ -14,7 +14,7 @@
                 </a>
             </li>
             <li class="list-item">
-                <a href="#">
+                <a href="favoris.php">
                     <div class="icon">
                         <span class="material-symbols-rounded">star</span>
                     </div>

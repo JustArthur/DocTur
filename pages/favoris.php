@@ -9,7 +9,7 @@
 
     require_once('./src/info_user.php');
 
-    $dossier_user = $DB->prepare("SELECT * FROM dossier WHERE idUser = ?");
+    $dossier_user = $DB->prepare("SELECT * FROM dossier WHERE idUser = ? and fav = 1");
     $dossier_user->execute(array($_SESSION['utilisateur'][0]));
     $dossier_user = $dossier_user->fetchAll();
 ?>
@@ -20,7 +20,7 @@
 
     <?php require_once('../include/link.php') ?>
 
-    <link rel="stylesheet" href="../css/pageFolder.css">
+    <link rel="stylesheet" href="../css/panel.css">
     <link rel="stylesheet" href="../css/sidebar.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
@@ -65,40 +65,39 @@
             </div>
         </div>
 
-        <div class="ajouts">
-            <h1 class="titre">Mes fichiers</h1>
-            <div class="liste-ajouts">
-                <div class="ligne">
-                    <div class="icone"><img src="../images/public/word.svg" alt=""></div>
-                    <div class="titre">Interstellar.docx</div>
-                    <div class="taille">14.05 Mo</div>
-                    <div class="date">Ajouté le <span style="color: var(--c-blue);"> 15 décembre 2022</span></div>
-                    <div class="download">
-                        <button>Télécharger</button>
-                        <button class="tel">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-download" viewBox="0 0 16 16">
-                                <path d="M4.406 1.342A5.53 5.53 0 0 1 8 0c2.69 0 4.923 2 5.166 4.579C14.758 4.804 16 6.137 16 7.773 16 9.569 14.502 11 12.687 11H10a.5.5 0 0 1 0-1h2.688C13.979 10 15 8.988 15 7.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 2.825 10.328 1 8 1a4.53 4.53 0 0 0-2.941 1.1c-.757.652-1.153 1.438-1.153 2.055v.448l-.445.049C2.064 4.805 1 5.952 1 7.318 1 8.785 2.23 10 3.781 10H6a.5.5 0 0 1 0 1H3.781C1.708 11 0 9.366 0 7.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/>
-                                <path d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z"/>
-                            </svg>
-                        </button>
+        <div class="dossiers">
+            <h1 class="titre">Mes favoris</h1>
+            <div class="cards">
 
-                        <button class="sup">Supprimer</button>
-                        <button class="tel-sup">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                            </svg>
-                        </button>
+            <?php
+                foreach ($dossier_user as $dossier) {
+
+                    if($dossier['nbrFichiers'] == 0) {
+                        $nbrFichiers = 'Pas de fichiers';
+                        
+                    } elseif($dossier['nbrFichiers'] == 1) {
+                        $nbrFichiers = $dossier['nbrFichiers'] . ' fichier';
+
+                    } else {
+                        $nbrFichiers = $dossier['nbrFichiers'] . ' fichiers';
+                    }
+
+            ?>
+                <a href="pageFolder.php?id=<?= $dossier['idDossier']?>">
+                    <div class="card">
+                        <svg class="icon-folder" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="60px" height="60px"><path fill="#ffa000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v24c0,2.2,1.8,4,4,4h29.7L44,29V16C44,13.8,42.2,12,40,12z"/><path fill="#ffca28" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"/></svg>
+                        <h2><?= $dossier['nomDossier'] ?></h2>
+                        <h5 class="prof"><?= $dossier['sousNomDossier'] ?></h5>
+                        <span class="material-icons-outlined star">star</span>
+                        <span class="material-icons-outlined menu">more_vert</span>
+                        <h5 class="count"><?= $nbrFichiers ?></h5>
                     </div>
-                </div>
-                <div class="ligne"></div>
-                <div class="ligne"></div>
-                <div class="ligne"></div>
-                <div class="ligne"></div>            
+                </a>
+            <?php
+                }
+            ?>
             </div>
         </div>
-
-        
     </section>
     
 </body>
