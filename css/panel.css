@@ -290,14 +290,16 @@ body {
     display: flex;
     width: 100%;
     min-height: 55px;
+    justify-content: flex-start;
     background-color: white;
     border-radius: 10px;
+    gap: 10px;
     box-shadow: 5px 5px 20px rgba(153, 153, 153, 0.4);
 }
 
 .ajouts .liste-ajouts .ligne .icone {
     display: block;
-    width: 200px;
+    width: 50px;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -313,25 +315,30 @@ body {
 }
 
 .ajouts .liste-ajouts .ligne .titre {
-    width: 100%;
     margin: auto;
 }
 
 .ajouts .liste-ajouts .ligne .taille {
     margin: auto;
-    justify-content: center;
-    width: 100%;
+    display: flex;
 }
 
 .ajouts .liste-ajouts .ligne .date {
     margin: auto;
-    display: block;
-    width: 100%;
 }
 
 .ajouts .liste-ajouts .ligne .download {
-    width: 100%;
+    margin: auto;
+    display: flex;
     background-color: forestgreen;
+}
+
+.ajouts .liste-ajouts .ligne .download button {
+    width: 150px;
+    height: 35px;
+    background: #3246D3;
+    box-shadow: 5px 5px 20px rgba(50, 70, 211, 0.4);
+    border-radius: 6px;
 }
 
 
@@ -340,7 +347,11 @@ body {
 
 
 
-
+@media screen and (max-width:1040px) {
+    .ajouts .liste-ajouts .ligne {
+        flex-wrap: wrap;
+    }
+}
 
 @media screen and (max-width:950px) {
     .global {

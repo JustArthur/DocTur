@@ -110,7 +110,7 @@
                     <div class="titre">Interstellar.docx</div>
                     <div class="taille">14.05 Mo</div>
                     <div class="date">Ajouté le <span style="color: var(--c-blue);"> 15 décembre 2022</span></div>
-                    <div class="download"></div>
+                    <div class="download"><button>Télécharger</button></div>
                 </div>
                 <div class="ligne"></div>
                 <div class="ligne"></div>
