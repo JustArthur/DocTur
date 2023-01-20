@@ -141,6 +141,176 @@ body {
     cursor: pointer;
 }
 
+.global .dossiers {
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.global .dossiers .titre {
+    padding: 1rem;
+}
+
+.dossiers .cards {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dossiers .cards a {
+    color: #1A1B2D;
+}
+
+.card {
+    width: 280px;
+    height: 180px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 5px 5px 20px rgba(153, 153, 153, 0.4);
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+    font-family: 'Poppins';
+    font-style: normal;
+    position: relative;
+    color: #1A1B2D;
+}
+
+.card svg.icon-folder {
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.card h2{
+    position: absolute;
+    top: 77px;
+    left: 20px;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 38px;
+}
+
+.card h5.prof {
+    position: absolute;
+    top: 115px;
+    left: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 15px;
+    color: #999999;
+}
+
+.card span.star {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    right: 40px;
+    color: #FFBB55;
+}
+
+.card span.menu {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    right: 8px;
+    color: #999999;
+    transition: all 300ms ease-in-out;
+}
+
+.card h5.count {
+    position: absolute;
+    bottom: 5px;
+    right: 13px;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 15px;
+    color: #999999;
+    text-align: right;
+}
+
+.card:hover {
+    box-shadow: none;
+    background: #3246D3;
+    color: #fff;
+    transition: all 300ms ease-in-out;
+}
+
+.card:hover a {
+    color: #fff;
+}
+
+.card:hover span.menu {
+    color: #fff;
+}
+
+
+
+.dossiers .desc {
+    width: 500px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dossiers .desc .description {
+    margin: 0 auto;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 5px 5px 20px rgba(199, 199, 199, 0.4);
+}
+
+.dossiers .desc .boutons {
+    margin: 20px auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    gap: 30px;
+}
+
+.dossiers .desc .boutons a button {
+    margin: auto;
+    width: 180px;
+    height: 35px;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 6px;
+    text-align: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dossiers .desc .boutons a button.up {
+    background: #009131;
+    box-shadow: 5px 5px 20px rgba(0, 145, 49, 0.4);
+    transition: 0.3s ease;
+}
+
+.dossiers .desc .boutons a button.del {
+    background: #CF0000;
+    box-shadow: 5px 5px 20px rgba(207, 0, 0, 0.4);
+    transition: 0.3s ease;
+}
+
+.dossiers .desc .boutons a button.up:hover {
+    box-shadow: none;
+    transition: 0.3s ease;
+}
+
+.dossiers .desc .boutons a button.del:hover {
+    box-shadow: none;
+    transition: 0.3s ease;
+}
+
+
+
 
 .global .ajouts {
     margin: 30px auto 0;
@@ -219,12 +389,19 @@ body {
     outline: none;
     border: none;
     cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.ajouts .liste-ajouts .ligne .download button:hover {
+    box-shadow: none;
+    transition: 0.3s ease;
 }
 
 .ajouts .liste-ajouts .ligne .download button.tel {
     display: none;
     width: 35px;
     height: 35px;
+    transition: 0.3s ease;
 }
 
 .ajouts .liste-ajouts .ligne .download button.tel-sup {
@@ -232,18 +409,31 @@ body {
     width: 35px;
     height: 35px;
     background: var(--c-error);
+    box-shadow: 5px 5px 20px rgba(207, 0, 0, 0.4);
+    transition: 0.3s ease;
 }
 
 .ajouts .liste-ajouts .ligne .download button.sup {
     width: 150px;
     height: 35px;
     background: var(--c-error);
-    box-shadow: 5px 5px 20px rgba(50, 70, 211, 0.4);
+    box-shadow: 5px 5px 20px rgba(207, 0, 0, 0.4);
     border-radius: 6px;
     color: white;
     outline: none;
     border: none;
     cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.ajouts .liste-ajouts .ligne .download button.tel-sup:hover {
+    box-shadow: none;
+    transition: 0.3s ease;
+}
+
+.ajouts .liste-ajouts .ligne .download button.sup:hover {
+    box-shadow: none;
+    transition: 0.3s ease;
 }
 
 
