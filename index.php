@@ -25,6 +25,7 @@
 
     <link rel="stylesheet" href="css/formulaire.css">
     <link rel="stylesheet" href="css/notification.css">
+    <link rel="shortcut icon" href="./images/public/DT.png" type="image/x-icon">
 
     <title>Connexion à DocTur</title>
 

@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" href="css/formulaire.css">
     <link rel="stylesheet" href="css/cookie.css">
+    <link rel="shortcut icon" href="./images/public/DT.png" type="image/x-icon">
 
     <title>Inscription à DocTur</title>
 </head>
