@@ -60,7 +60,7 @@
                     </svg>
                 </div>
                 <div class="avatar">
-                    <img src="<?= $avatar ?>" alt="">
+                    <a href="profil"><img src="<?= $avatar ?>" alt=""></a>
                 </div>
             </div>
         </div>

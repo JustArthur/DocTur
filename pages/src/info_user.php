@@ -47,7 +47,7 @@
             break;
 
         default:
-            $avatar = '../images/private/utilisateur/' . $_SESSION['utilisateur'][1] . '/' . $_SESSION['utilisateur'][7];
+            $avatar = '../images/private/utilisateurs/' . $_SESSION['utilisateur'][1] . '/' . $_SESSION['utilisateur'][7];
     }
 
     switch ($_SESSION['utilisateur'][11]) {
