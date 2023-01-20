@@ -1,27 +1,5 @@
 @import url('initialisations.css');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0 auto;
-    display: flex;
-    background-color: var(--c-background);
-}
-
-.global {
-    margin: 0 auto;
-    margin-left: 300px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: 100vh;
-    padding: 1rem;
-}
-
 .barre-recherche {
     width: 100%;
     display: flex;
@@ -155,7 +133,6 @@ body {
 .dossiers .cards {
     display: flex;
     width: 100%;
-    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -164,7 +141,7 @@ body {
 }
 
 .card {
-    width: 280px;
+    min-width: 280px;
     height: 180px;
     border-radius: 15px;
     background: #fff;
@@ -249,7 +226,8 @@ body {
 
 
 .dossiers .desc {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -451,6 +429,12 @@ body {
 
     .barre-recherche form.search .div .barre {
         width: 300px;
+    }
+}
+
+@media screen and (max-width:850px) {
+    .dossiers .cards {
+        flex-wrap: wrap;
     }
 }
 

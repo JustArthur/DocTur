@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li class="list-item">
-                <a href="#">
+                <a href="profil">
                     <div class="icon">
                         <span class="material-symbols-rounded">person</span>
                     </div>
