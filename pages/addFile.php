@@ -48,8 +48,8 @@
             }
 
             if($valid) {
-                $insert_folder = $DB->prepare("INSERT INTO dossier (idUser, nomDossier, sousNomDossier) VALUES(?, ?, ?)");
-                $insert_folder->execute(array($_SESSION['utilisateur'][0], $nom, $sous_nom));
+                // $insert_folder = $DB->prepare("INSERT INTO dossier (idUser, nomDossier, sousNomDossier) VALUES(?, ?, ?)");
+                // $insert_folder->execute(array($_SESSION['utilisateur'][0], $nom, $sous_nom));
 
                 $erreur = '
                     <ul class="notifications">
@@ -137,9 +137,12 @@
         <div class="addFile">
             <form action="" method="post" enctype="multipart/form-data">
                 <input type="text" required placeholder="Nom du fichier" name="nom" id="">
-                <label class="file" for="file">
-                    <input type="file" required name="file" id="">
-                </label>
+                <div class="button-wrapper">
+                    <span class="label">
+                        Télécharger le fichier
+                    </span>
+                    <input type="file" name="file" id="upload">
+                </div>
                 <input type="submit" name="submit" value="Ajouter le fichier">
             </form>
         </div>
