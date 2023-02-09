@@ -295,10 +295,35 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    position: relative;
 }
 
 .global .ajouts .titre {
     padding: 1rem;
+}
+
+.ajouts a button.add {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 180px;
+    height: 35px;
+    color: white;
+    background-color: var(--c-blue);
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 6px;
+    text-align: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 5px 5px 20px rgba(50, 70, 211, 0.4);
+    transition: 0.3s ease;
+}
+
+.ajouts a button.add:hover {
+    box-shadow: none;
+    transition: 0.3s ease;
 }
 
 .ajouts .liste-ajouts {

@@ -89,6 +89,7 @@
 
         <div class="ajouts">
             <h1 class="titre">Mes fichiers</h1>
+            <a href="addFile"><button class="add">Ajouter un fichier</button></a>
             <div class="liste-ajouts">
                 <div class="ligne">
                     <div class="icone"><img src="../images/public/word.svg" alt=""></div>
