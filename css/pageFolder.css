@@ -302,10 +302,19 @@
     padding: 1rem;
 }
 
-.ajouts a button.add {
+.ajouts .liste-ajouts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1300px;
+    gap: 15px;
+    position: relative;
+}
+
+.ajouts .liste-ajouts button.add {
     position: absolute;
-    top: 20px;
-    right: 10px;
+    top: -30px;
+    right: 0px;
     width: 180px;
     height: 35px;
     color: white;
@@ -321,17 +330,9 @@
     transition: 0.3s ease;
 }
 
-.ajouts a button.add:hover {
+.ajouts .liste-ajouts button.add:hover {
     box-shadow: none;
     transition: 0.3s ease;
-}
-
-.ajouts .liste-ajouts {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 1300px;
-    gap: 15px;
 }
 
 .ajouts .liste-ajouts .ligne {
