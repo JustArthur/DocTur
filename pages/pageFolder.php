@@ -90,7 +90,7 @@
         <div class="ajouts">
             <h1 class="titre">Mes fichiers</h1>
             <div class="liste-ajouts">
-                <a href="addFile"><button class="add">Ajouter un fichier</button></a>
+                <a href="addFile.php?id=<?= $_GET['id']?>"><button class="add">Ajouter un fichier</button></a>
                 <div class="ligne">
                     <div class="icone"><img src="../images/public/word.svg" alt=""></div>
                     <div class="titre">Interstellar.docx</div>
