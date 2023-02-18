@@ -3,80 +3,12 @@
 
     
     if(!empty($_POST)) {
-        extract($_POST);
-
-        
+        extract($_POST);     
         
         if(isset($_POST['submit'])) {
 
-            $valid = true;
-            $erreur = '';
-
-            $recupDossier = $DB->prepare("SELECT idDossier FROM dossier WHERE idUser = ? AND nomDossier = ? ");
-            $recupDossier->execute(array($_SESSION['utilisateur'][0], $nom));
-            $recupDossier = $recupDossier->fetch();
-
-            if(isset($recupDossier['idDossier'])) {
-                $valid = false;
-                $erreur = '
-                    <ul class="notifications">
-                        <li class="toast error">
-                            <div class="column">
-                                <span class="material-icons-round icon-notif">error</span>
-                                <span class="message-notif">Dossier déjà existant.</span>
-                            </div>
-                            <span class="material-icons-outlined icon-notif close" onclick="remove()">close</span>
-                        </li>
-                    </ul>
-                    <script>
-                        const toast = document.querySelector(".toast");
-
-                        function hideToast() {
-                            setTimeout(function() {
-                                toast.classList.add("hide")
-                            }, 5000);
-                        }
-
-                        function remove() {
-                            toast.classList.add("hide");
-                        }
-
-                        hideToast();
-                    </script>';
-            } else {
-                $valid = true;
-            }
-
-            if($valid) {
-                // $insert_folder = $DB->prepare("INSERT INTO dossier (idUser, nomDossier, sousNomDossier) VALUES(?, ?, ?)");
-                // $insert_folder->execute(array($_SESSION['utilisateur'][0], $nom, $sous_nom));
-
-                $erreur = '
-                    <ul class="notifications">
-                        <li class="toast success">
-                            <div class="column">
-                                <span class="material-icons-round icon-notif">check_circle</span>
-                                <span class="message-notif">Dossier créé.</span>
-                            </div>
-                            <span class="material-icons-outlined icon-notif close" onclick="remove()">close</span>
-                        </li>
-                    </ul>
-                    <script>
-                        const toast = document.querySelector(".toast");
-
-                        function hideToast() {
-                            setTimeout(function() {
-                                toast.classList.add("hide")
-                            }, 5000);
-                        }
-
-                        function remove() {
-                            toast.classList.add("hide");
-                        }
-
-                        hideToast();
-                    </script>';
-            }
+            $insert_file = $DB->prepare("INSERT INTO fichiers (idDossier, nomFichier) VALUES(?, ?)");
+            $insert_file->execute(array($_GET['id'], $nom));
         }
     }
 ?>
