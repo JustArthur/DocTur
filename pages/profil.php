@@ -63,6 +63,7 @@
             </div>
             <div class="details">
                 <div class="pseudo"><?= $_SESSION['utilisateur'][1]?></div>
+                <a href="" class="settings">Modifier mes informations</a>
             </div>
             <div class="bio">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta exercitationem non nobis pariatur dolorum praesentium hic, ducimus iste deserunt sequi officia veniam ex blanditiis! Quae aut, voluptates hic ut tempora tenetur quibusdam laborum ab fugit cumque quaerat magni odio non corporis at tempore facilis libero. Voluptates eius nulla corporis. Accusantium!
