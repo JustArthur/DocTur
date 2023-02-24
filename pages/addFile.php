@@ -7,8 +7,35 @@
         
         if(isset($_POST['submit'])) {
 
-            $insert_file = $DB->prepare("INSERT INTO fichiers (idDossier, nomFichier) VALUES(?, ?)");
-            $insert_file->execute(array($_GET['id'], $nom));
+            if(isset($_FILES['file']) && !empty($_FILES['file']['name'])) {
+
+                $nomDossier = $DB->prepare("SELECT nomDossier FROM dossier WHERE idDossier = ? and idUser =;");
+                $nomDossier->execute(array($_GET['id'], $_SESSION['utilisateur'][0]));
+                $nomDossier = $nomDossier->fetch();
+                    
+                $extension = array('docx', 'pdf', 'jpeg', 'png', 'mp3');
+    
+                $upload = strtolower(substr(strchr($_FILES['file']['name'], '.'), 1));
+    
+                if(in_array($upload, $extension)) {
+                    $chemin =  '../../../images/private/utilisateurs/' . $_SESSION['utilisateur'][1] . '/' .$nomDossier['nomDossier']. '/';
+    
+                    if(!is_dir($chemin)) {
+                        mkdir($chemin);
+                    }
+    
+                    $file = $nom . $upload;
+    
+                    $chemin_final = $chemin . $file;
+    
+                    $res_file = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin_final);
+                }
+    
+                if(is_readable($chemin_final)) {
+                    $insert_file = $DB->prepare("INSERT INTO fichiers (idDossier, nomFichier, cheminFichier) VALUES(?, ?, ?)");
+                    $insert_file->execute(array($_GET['id'], $nom, $chemin_final));
+                }
+            }
         }
     }
 ?>
@@ -32,7 +59,7 @@
 
     <?php
 
-        include_once ('src/sidebar.php');
+        // include_once ('src/sidebar.php');
 
     ?>
 
