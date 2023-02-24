@@ -1,6 +1,8 @@
 <?php
     require_once('src/info_user.php');
 
+    $erreur = "";
+
     
     if(!empty($_POST)) {
         extract($_POST);     
@@ -9,7 +11,7 @@
 
             if(isset($_FILES['file']) && !empty($_FILES['file']['name'])) {
 
-                $nomDossier = $DB->prepare("SELECT nomDossier FROM dossier WHERE idDossier = ? and idUser =;");
+                $nomDossier = $DB->prepare("SELECT nomDossier FROM dossier WHERE idDossier = ? and idUser =?;");
                 $nomDossier->execute(array($_GET['id'], $_SESSION['utilisateur'][0]));
                 $nomDossier = $nomDossier->fetch();
                     
@@ -18,22 +20,48 @@
                 $upload = strtolower(substr(strchr($_FILES['file']['name'], '.'), 1));
     
                 if(in_array($upload, $extension)) {
-                    $chemin =  '../../../images/private/utilisateurs/' . $_SESSION['utilisateur'][1] . '/' .$nomDossier['nomDossier']. '/';
+                    $chemin =  '../images/private/utilisateurs/' . $_SESSION['utilisateur'][1] . '/' .$nomDossier['nomDossier']. '/';
     
                     if(!is_dir($chemin)) {
                         mkdir($chemin);
                     }
     
-                    $file = $nom . $upload;
+                    $file = $nom .'.'. $upload;
     
                     $chemin_final = $chemin . $file;
     
-                    $res_file = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin_final);
+                    $res_file = move_uploaded_file($_FILES['file']['tmp_name'], $chemin_final);
                 }
     
                 if(is_readable($chemin_final)) {
-                    $insert_file = $DB->prepare("INSERT INTO fichiers (idDossier, nomFichier, cheminFichier) VALUES(?, ?, ?)");
-                    $insert_file->execute(array($_GET['id'], $nom, $chemin_final));
+                    $insert_file = $DB->prepare("INSERT INTO fichiers (idDossier, nomFichier, cheminFichier, tailleFichier, dateAjout) VALUES(?, ?, ?, ?, ?)");
+                    $insert_file->execute(array($_GET['id'], $file, $chemin_final, $_FILES['file']['size'], date('Y-m-d')));
+
+                    $erreur = '
+                    <ul class="notifications">
+                        <li class="toast success">
+                            <div class="column">
+                                <span class="material-icons-round icon-notif">check_circle</span>
+                                <span class="message-notif">Fichier ajouté.</span>
+                            </div>
+                            <span class="material-icons-outlined icon-notif close" onclick="remove()">close</span>
+                        </li>
+                    </ul>
+                    <script>
+                        const toast = document.querySelector(".toast");
+
+                        function hideToast() {
+                            setTimeout(function() {
+                                toast.classList.add("hide")
+                            }, 5000);
+                        }
+
+                        function remove() {
+                            toast.classList.add("hide");
+                        }
+
+                        hideToast();
+                    </script>';
                 }
             }
         }
@@ -59,7 +87,7 @@
 
     <?php
 
-        // include_once ('src/sidebar.php');
+        include_once ('src/sidebar.php');
 
     ?>
 
@@ -94,6 +122,7 @@
         </div>
 
         <div class="addFile">
+            <?=$erreur?>
             <form action="" method="post" enctype="multipart/form-data">
                 <input type="text" required placeholder="Nom du fichier" name="nom" id="">
                 <div class="button-wrapper">
