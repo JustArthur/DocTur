@@ -15,7 +15,7 @@
                 $nomDossier->execute(array($_GET['id'], $_SESSION['utilisateur'][0]));
                 $nomDossier = $nomDossier->fetch();
                     
-                $extension = array('docx', 'pdf', 'jpeg', 'png', 'mp3');
+                $extension = array('docx', 'pptx', 'pdf', 'jpeg', 'png', 'mp3', 'mp4');
     
                 $upload = strtolower(substr(strchr($_FILES['file']['name'], '.'), 1));
     
