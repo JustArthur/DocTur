@@ -55,7 +55,7 @@ ul.list .btn-deco {
     bottom: 5%;
 }
 
-ul.list .list-item:active:after {
+ul.list .list-item.active:after {
     content: "";
     position: absolute;
     right: -30px;
@@ -66,8 +66,12 @@ ul.list .list-item:active:after {
     border-bottom-left-radius: 10px;
 }
 
-ul.list .list-item:active {
+ul.list .list-item.active {
     background-color: var(--c-dark-blue);
+}
+
+ul.list .list-item.active a {
+    color: white;
 }
 
 ul.list .list-item:hover {

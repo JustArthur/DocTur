@@ -3,7 +3,7 @@
             <h1>Doc<span class="degrade">Tur</span></h1>
         </div>
         <ul class="list">
-            <li class="list-item">
+            <li class="list-item" id="item">
                 <a href="panel">
                     <div class="icon">
                         <span class="material-symbols-rounded">dashboard</span>
@@ -13,7 +13,7 @@
                     </div>
                 </a>
             </li>
-            <li class="list-item">
+            <li class="list-item" id="item">
                 <a href="favoris">
                     <div class="icon">
                         <span class="material-symbols-rounded">star</span>
@@ -23,7 +23,7 @@
                     </div>
                 </a>
             </li>
-            <li class="list-item">
+            <li class="list-item" id="item">
                 <a href="profil">
                     <div class="icon">
                         <span class="material-symbols-rounded">person</span>
@@ -33,7 +33,7 @@
                     </div>
                 </a>
             </li>
-            <li class="list-item">
+            <li class="list-item" id="item">
                 <a href="#">
                     <div class="icon">
                         <span class="material-symbols-rounded">settings</span>
@@ -55,3 +55,5 @@
             </li>
         </ul>
     </aside>
+
+    <script src="../js/sidebar.js"></script>
