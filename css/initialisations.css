@@ -17,7 +17,7 @@ body {
 
 .global {
     margin: 0 auto;
-    margin-left: 300px;
+    margin-left: 250px;
     display: flex;
     flex-direction: column;
     width: 100%;

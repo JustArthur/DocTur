@@ -1,5 +1,6 @@
     <aside>
         <div class="titre">
+            <img src="../images/public/logo.png" alt="">
             <h1>Doc<span class="degrade">Tur</span></h1>
         </div>
         <ul class="list">
