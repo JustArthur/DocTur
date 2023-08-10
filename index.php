@@ -63,7 +63,6 @@
                     </div>
                     <div class="slog-item"><h1>de stockage</h1></div>
                     <div class="slog-item"><h1><span>en ligne.</span></h1></div>
-                    
                 </div>
             </div>
         </div>

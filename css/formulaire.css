@@ -29,7 +29,8 @@ body {
 .left form {
     margin: auto;
     display: flex;
-    width: 70%;
+    width: 100%;
+    max-width: 900px;
     flex-direction: column;
     padding: 1rem;
 }
@@ -205,11 +206,24 @@ body {
 }
 
 @media (max-width:860px) {
-    .right {
-        display: none;
+    .left {
+        z-index: 21;
+        background: transparent;
     }
 
-    .left form {
-        width: 90%;
+    .right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url(../images/public/fond-droit.png);
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+        z-index: 20;
+        opacity: 0.7;
+    }
+
+    .right .desc {
+        display: none;
     }
 }
