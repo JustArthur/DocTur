@@ -347,6 +347,10 @@
     box-shadow: 5px 5px 20px rgba(153, 153, 153, 0.4);
 }
 
+.ajouts .liste-ajouts .ligne p {
+    margin: auto;
+}
+
 .ajouts .liste-ajouts .ligne .icone {
     display: block;
     width: 40px;
