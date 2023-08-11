@@ -37,39 +37,66 @@
     ?>
 
     <section class="global">
-        <div class="barre-recherche">
-            <div class="profil">
-                <div class="message">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
-                        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
-                        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
-                    </svg>
-                </div>
-                <div class="settings">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat" viewBox="0 0 16 16">
-                        <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"/>
-                    </svg>
-                </div>
-            </div>
-        </div>
-
         <div class="compte">
             <h1 class="titre">Mon profil</h1>
             <div class="banniere">
                 <img src="<?= $banner ?>" alt="">
                 <div class="avatar">
-                <img src="<?= $avatar ?>" alt="">
+                    <img src="<?= $avatar ?>" alt="">
+                    <div class="avatar_hover" onclick="openPhotoChanger()"><span class="material-symbols-rounded">photo_camera</span></div>
+                </div>
             </div>
-            </div>
-            <div class="details">
+            <div class="details" id="details">
                 <div class="pseudo"><?= $_SESSION['utilisateur'][1]?></div>
-                <a href="" class="settings">Modifier mes informations</a>
+                <script>
+                    fetch('http://ip-api.com/json')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('country').innerHTML += data.country;
+                    });
+                </script>
+                <div class="loca" id="country"><span class="material-symbols-rounded">location_on</span>&nbsp;</div>
+                <span class="profil_btn">
+                    <a class="settings" onclick="openInfoChanger()">Modifier mes informations</a>
+                </span>
             </div>
-            <div class="bio">
+            <!-- <div class="bio">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta exercitationem non nobis pariatur dolorum praesentium hic, ducimus iste deserunt sequi officia veniam ex blanditiis! Quae aut, voluptates hic ut tempora tenetur quibusdam laborum ab fugit cumque quaerat magni odio non corporis at tempore facilis libero. Voluptates eius nulla corporis. Accusantium!
+            </div> -->
+
+        </div>
+
+        <div class="photoChanger" id="divPhoto">
+            <span class="material-symbols-rounded" onclick="closePhotoChanger()">close</span>
+            <div class="ancienne_photo">
+                <img id="ancienne_photo" src="<?= $avatar ?>" alt="">
+                <img id="preview">
             </div>
+            <form class="form_photo" method="post" enctype="multipart/form-data">
+                <input type="file" name="photo" id="input-file" onchange="previewImage()" required="required">
+                <input type="submit" name="newPhoto" value="Enregistrer">
+            </form>
         </div>
     </section>
+
+    <script src="../js/profil.js"></script>
+    <script>
+        function previewImage() {
+            var preview = document.querySelector('#preview');
+            var file = document.querySelector('#input-file').files[0];
+            var reader = new FileReader();
+            var ancienne = document.querySelector('#ancienne_photo');
+
+            reader.addEventListener("load", function () {
+                preview.src = reader.result;
+                ancienne.style.display = "none";
+            }, false);
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
     
 </body>
 </html>

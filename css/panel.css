@@ -22,26 +22,25 @@ body {
     padding: 1rem;
 }
 
-.barre-recherche {
+header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    position: relative;
 }
 
-.barre-recherche form.search {
+header form.search {
     margin: auto;
     display: flex;
     width: 100%;
     gap: 30px;
 }
 
-.barre-recherche form.search .div {
+header form.search .div_input {
     position: relative;
 }
 
-.barre-recherche form.search .div .barre {
+header form.search .div_input .barre {
     width: 500px;
     height: 55px;
     background: #FFFFFF;
@@ -52,12 +51,12 @@ body {
     outline: none;
     border: none;
 }
-.barre-recherche form.search .div .barre:focus {
+header form.search .div_input .barre:focus {
     outline: solid 2px var(--c-blue);
 }
 
 
-.barre-recherche form.search .div .icon {
+header form.search .div_input .icon {
     position: absolute;
     top: 50%;
     left: 20px;
@@ -65,7 +64,7 @@ body {
     color: var(--c-grey);
 }
 
-.barre-recherche form.search .div .btn-search {
+header form.search .div_input .btn-search {
     position: absolute;
     top: 50%;
     right: 10px;
@@ -83,12 +82,12 @@ body {
 }
 
 
-.barre-recherche form.search .btn-search:hover {
+header form.search .btn-search:hover {
     background-color: var(--c-dark-blue);
     transition: all 0.3s ease;
 }
 
-.barre-recherche .profil {
+/* header .profil {
     position: absolute;
     top: 0;
     right: 0;
@@ -99,13 +98,13 @@ body {
     align-items: center;
 }
 
-.barre-recherche .profil .message {
+header .profil .message {
     width: 30px;
     height: 30px;
     position: relative;
 }
 
-.barre-recherche .profil .message svg {
+header .profil .message svg {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -113,33 +112,21 @@ body {
     cursor: pointer;
 }
 
-.barre-recherche .profil .settings {
+header .profil .settings {
     width: 30px;
     height: 30px;
     position: relative;
 }
 
-.barre-recherche .profil .settings svg {
+header .profil .settings svg {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
-}
+} */
 
-.barre-recherche .profil .avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
 
-.barre-recherche .profil .avatar img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    cursor: pointer;
-}
 
 
 .global .dossiers {
@@ -177,6 +164,11 @@ body {
     font-style: normal;
     position: relative;
     color: #1A1B2D;
+    display: flex;
+}
+
+.card p {
+    margin: auto;
 }
 
 .card svg.icon-folder {
@@ -233,7 +225,7 @@ body {
     text-align: right;
 }
 
-.add {
+.card.add {
     display: flex;
     border: 3px dashed #3246D3;
     background: none;
@@ -243,6 +235,8 @@ body {
     font-size: 18px;
     color: #3246D3;
     box-shadow: none;
+    flex-grow: 1;
+    flex-shrink: 0;
 }
 
 .card:hover {
@@ -374,8 +368,14 @@ body {
         transition: all 0.3s ease-in-out;
     }
 
-    .barre-recherche form.search .div .barre {
+    header form.search .div_input .barre {
         width: 300px;
+    }
+}
+
+@media screen and (max-width:730px) {
+    .card {
+        width: 100%;
     }
 }
 
@@ -384,6 +384,7 @@ body {
         display: none;
     }
 }
+
 
 @media screen and (max-width:525px) {
     .ajouts .liste-ajouts .ligne .download button {

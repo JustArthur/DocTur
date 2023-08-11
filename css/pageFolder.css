@@ -183,18 +183,8 @@
     width: 30px;
     height: 30px;
     top: 15px;
-    right: 40px;
+    right: 20px;
     color: #FFBB55;
-}
-
-.card span.menu {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    top: 15px;
-    right: 8px;
-    color: #999999;
-    transition: all 300ms ease-in-out;
 }
 
 .card h5.count {

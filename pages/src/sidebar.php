@@ -1,11 +1,11 @@
     <aside>
-        <div class="titre">
+        <div class="titre" onclick="location.href='panel.php'">
             <img src="../images/public/logo.png" alt="">
             <h1>Doc<span class="degrade">Tur</span></h1>
         </div>
         <ul class="list">
             <li class="list-item" id="item">
-                <a href="panel">
+                <a href="panel.php">
                     <div class="icon">
                         <span class="material-symbols-rounded">dashboard</span>
                     </div>
@@ -15,7 +15,7 @@
                 </a>
             </li>
             <li class="list-item" id="item">
-                <a href="favoris">
+                <a href="favoris.php">
                     <div class="icon">
                         <span class="material-symbols-rounded">star</span>
                     </div>
@@ -25,7 +25,7 @@
                 </a>
             </li>
             <li class="list-item" id="item">
-                <a href="profil">
+                <a href="profil.php">
                     <div class="icon">
                         <span class="material-symbols-rounded">person</span>
                     </div>
