@@ -132,6 +132,7 @@
 
 .dossiers .cards {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     gap: 20px;
 }
@@ -141,7 +142,7 @@
 }
 
 .card {
-    min-width: 280px;
+    width: 280px;
     height: 180px;
     border-radius: 15px;
     background: #fff;
@@ -183,7 +184,7 @@
     width: 30px;
     height: 30px;
     top: 15px;
-    right: 20px;
+    right: 10px;
     color: #FFBB55;
 }
 
@@ -232,17 +233,15 @@
     box-shadow: 5px 5px 20px rgba(199, 199, 199, 0.4);
 }
 
-.dossiers .desc .boutons {
-    margin: 20px auto;
-    width: 100%;
+.dossiers .boutons {
+    margin: 20px 0;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     border-radius: 10px;
-    gap: 30px;
+    gap: 10px;
 }
 
-.dossiers .desc .boutons a button {
-    margin: auto;
+.dossiers .boutons input {
     width: 180px;
     height: 35px;
     color: white;
@@ -255,30 +254,38 @@
     cursor: pointer;
 }
 
-.dossiers .desc .boutons a button.up {
+.dossiers .boutons input.up {
     background: #009131;
     box-shadow: 5px 5px 20px rgba(0, 145, 49, 0.4);
     transition: 0.3s ease;
 }
 
-.dossiers .desc .boutons a button.del {
+.dossiers .boutons input.del {
     background: #CF0000;
     box-shadow: 5px 5px 20px rgba(207, 0, 0, 0.4);
     transition: 0.3s ease;
 }
 
-.dossiers .desc .boutons a button.up:hover {
+.dossiers .boutons input.up:hover {
     box-shadow: none;
     transition: 0.3s ease;
 }
 
-.dossiers .desc .boutons a button.del:hover {
+.dossiers .boutons input.del:hover {
     box-shadow: none;
     transition: 0.3s ease;
 }
 
+.dossiers .boutons input.fav, input.unfav {
+    background: var(--c-blue);
+    box-shadow: 5px 5px 20px rgba(0, 15, 145, 0.4);
+    transition: 0.3s ease;
+}
 
-
+.dossiers .boutons input.fav:hover, input.unfav:hover {
+    box-shadow: none;
+    transition: 0.3s ease;
+}
 
 .global .ajouts {
     margin: 30px auto 0;
@@ -438,23 +445,6 @@
 @media screen and (max-width:1180px) {
     .ajouts .liste-ajouts .ligne .date {
         display: none;
-    }
-}
-
-@media screen and (max-width:950px) {
-    .global {
-        margin-left: 100px;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .barre-recherche form.search .div .barre {
-        width: 300px;
-    }
-}
-
-@media screen and (max-width:850px) {
-    .dossiers .cards {
-        flex-wrap: wrap;
     }
 }
 

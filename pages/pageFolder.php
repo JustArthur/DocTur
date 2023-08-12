@@ -63,15 +63,13 @@
                         <span class="material-icons-outlined star">star</span>
                     <?php } ?>
                 </div>
-                <div class="desc">
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui non recusandae minima pariatur</p>
-                    </div>
-                    <div class="boutons">
-                        <a href=""><button class="up">Modifier le dossier</button></a>
-                        <a href=""><button class="del">Supprimer le dossier</button></a>
-                    </div>
-                </div>
+                
+                <form method="post" class="boutons">
+                    <!-- <input class="fav" type="submit" value="Favori"> -->
+                    <input class="unfav" type="submit" value="Non Favori">
+                    <input class="up" type="submit" value="Modifier le dossier">
+                    <input class="del" type="submit" value="Supprimer le dossier">
+                </form>
             </div>
         </div>
 
