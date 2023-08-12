@@ -94,11 +94,13 @@
                         $fichiers = $fichiers->fetchAll();
 
                         foreach ($fichiers as $file) {
+
+                            $tailleFichier = formatSizeUnits($file['tailleFichier']);
                 ?>
                     <div class="ligne">
                         <div class="icone"><img src="../images/public/word.svg" alt=""></div>
                         <div class="titre"><?= $file['nomFichier']?></div>
-                        <div class="taille"><?= $file['tailleFichier']?></div>
+                        <div class="taille"><?= $tailleFichier?></div>
                         <div class="date">Ajouté le <span style="color: var(--c-blue);"> <?= $file['dateAjout']?></span></div>
                         <div class="download">
                             <a href="<?= $file['cheminFichier']?>" download><button>Télécharger</button></a>

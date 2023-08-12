@@ -110,6 +110,10 @@ header .avatar img {
         margin-left: 100px;
         transition: all 0.3s ease-in-out;
     }
+
+    header form.search .div_input .barre {
+        width: 300px;
+    }
 }
 
 svg {

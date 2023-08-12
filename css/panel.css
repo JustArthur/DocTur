@@ -362,17 +362,6 @@ header .profil .settings svg {
     }
 }
 
-@media screen and (max-width:950px) {
-    .global {
-        margin-left: 100px;
-        transition: all 0.3s ease-in-out;
-    }
-
-    header form.search .div_input .barre {
-        width: 300px;
-    }
-}
-
 @media screen and (max-width:730px) {
     .card {
         width: 100%;
