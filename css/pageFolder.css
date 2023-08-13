@@ -378,15 +378,15 @@
     margin: auto;
 }
 
-.ajouts .liste-ajouts .ligne .download {
+.ajouts .liste-ajouts .ligne .boutons {
     margin: auto;
     display: flex;
     gap: 15px;
 }
 
-.ajouts .liste-ajouts .ligne .download button {
-    width: 150px;
-    height: 35px;
+.ajouts .liste-ajouts .ligne .boutons input {
+    width: max-content;
+    padding: 10px;
     background: #3246D3;
     box-shadow: 5px 5px 20px rgba(50, 70, 211, 0.4);
     border-radius: 6px;
@@ -395,32 +395,14 @@
     border: none;
     cursor: pointer;
     transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.ajouts .liste-ajouts .ligne .download button:hover {
-    box-shadow: none;
-    transition: 0.3s ease;
-}
-
-.ajouts .liste-ajouts .ligne .download button.tel {
-    display: none;
-    width: 35px;
-    height: 35px;
-    transition: 0.3s ease;
-}
-
-.ajouts .liste-ajouts .ligne .download button.tel-sup {
-    display: none;
-    width: 35px;
-    height: 35px;
-    background: var(--c-error);
-    box-shadow: 5px 5px 20px rgba(207, 0, 0, 0.4);
-    transition: 0.3s ease;
-}
-
-.ajouts .liste-ajouts .ligne .download button.sup {
-    width: 150px;
-    height: 35px;
+.ajouts .liste-ajouts .ligne .boutons input.supprimer {
+    width: max-content;
+    padding: 10px;
     background: var(--c-error);
     box-shadow: 5px 5px 20px rgba(207, 0, 0, 0.4);
     border-radius: 6px;
@@ -429,17 +411,20 @@
     border: none;
     cursor: pointer;
     transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.ajouts .liste-ajouts .ligne .download button.tel-sup:hover {
+.ajouts .liste-ajouts .ligne .boutons input:hover {
     box-shadow: none;
-    transition: 0.3s ease;
+    transition: 0.2s ease;
 }
 
-.ajouts .liste-ajouts .ligne .download button.sup:hover {
-    box-shadow: none;
-    transition: 0.3s ease;
-}
+
+
+
+
 
 
 @media screen and (max-width:1180px) {
@@ -454,16 +439,12 @@
     }
 }
 
-@media screen and (max-width:675px) {
-    .ajouts .liste-ajouts .ligne .download button {
+/* @media screen and (max-width:675px) {
+    .custom-label .dl, .custom-label .sup {
         display: none;
     }
 
-    .ajouts .liste-ajouts .ligne .download button.tel {
-        display: block;
+    .custom-label .dl_tel, .custom-label .sup_tel {
+        display: inline-block;
     }
-
-    .ajouts .liste-ajouts .ligne .download button.tel-sup {
-        display: block;
-    }
-}
+} */
