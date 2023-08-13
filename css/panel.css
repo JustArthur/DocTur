@@ -183,6 +183,8 @@ header .profil .settings svg {
     font-weight: 600;
     font-size: 25px;
     line-height: 38px;
+    color: var(--c-dark-blue);
+    transition: all 300ms ease-in-out;
 }
 
 .card h5.prof {
@@ -204,7 +206,7 @@ header .profil .settings svg {
     color: #FFBB55;
 }
 
-.card span.menu {
+/* .card span.menu {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -212,7 +214,7 @@ header .profil .settings svg {
     right: 8px;
     color: #999999;
     transition: all 300ms ease-in-out;
-}
+} */
 
 .card h5.count {
     position: absolute;
@@ -246,14 +248,10 @@ header .profil .settings svg {
     transition: all 300ms ease-in-out;
 }
 
-.card:hover a {
+.card:hover h2 {
     color: #fff;
+    transition: all 300ms ease-in-out;
 }
-
-.card:hover span.menu {
-    color: #fff;
-}
-
 
 
 
@@ -288,7 +286,7 @@ header .profil .settings svg {
     background-color: white;
     border-radius: 10px;
     gap: 10px;
-    padding: 5px;
+    padding: 10px;
     box-shadow: 5px 5px 20px rgba(153, 153, 153, 0.4);
 }
 
@@ -310,7 +308,7 @@ header .profil .settings svg {
 }
 
 .ajouts .liste-ajouts .ligne .titre {
-    margin: auto;
+    margin: auto auto auto 0;
 }
 
 .ajouts .liste-ajouts .ligne .taille {
@@ -322,14 +320,15 @@ header .profil .settings svg {
     margin: auto;
 }
 
-.ajouts .liste-ajouts .ligne .download {
-    margin: auto;
+.ajouts .liste-ajouts .ligne .boutons {
+    margin: auto 0 auto auto;
     display: flex;
+    gap: 10px;
 }
 
-.ajouts .liste-ajouts .ligne .download button {
-    width: 150px;
-    height: 35px;
+.ajouts .liste-ajouts .ligne .boutons a {
+    width: max-content;
+    padding: 10px;
     background: #3246D3;
     box-shadow: 5px 5px 20px rgba(50, 70, 211, 0.4);
     border-radius: 6px;
@@ -337,12 +336,50 @@ header .profil .settings svg {
     outline: none;
     border: none;
     cursor: pointer;
+    transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.ajouts .liste-ajouts .ligne .download button.tel {
+.ajouts .liste-ajouts .ligne .boutons a.open_in {
+    background: var(--c-dark-blue);
+    box-shadow: 5px 5px 20px rgba(0, 13, 109, 0.432);
+}
+
+.ajouts .liste-ajouts .ligne .boutons a .dl_tel {
     display: none;
-    width: 35px;
-    height: 35px;
+}
+
+.ajouts .liste-ajouts .ligne .boutons a:hover {
+    box-shadow: none;
+    transition: 0.2s ease;
+}
+
+
+
+
+.custom-submit {
+    display: inline-block;
+    cursor: pointer;
+    background-color: blue; /* Couleur de fond bleue */
+    padding: 10px; /* Espace intérieur autour du bouton */
+    border-radius: 5px; /* Coins arrondis */
+    color: white; /* Couleur du texte */
+    font-weight: bold; /* Texte en gras */
+    font-size: 14px; /* Taille du texte */
+    text-align: center; /* Centrage du texte */
+    position: relative; /* Nécessaire pour placer le libellé SVG correctement */
+}
+
+.custom-submit input[type="submit"] {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
 
@@ -375,12 +412,12 @@ header .profil .settings svg {
 }
 
 
-@media screen and (max-width:525px) {
-    .ajouts .liste-ajouts .ligne .download button {
+@media screen and (max-width:750px) {
+    .ajouts .liste-ajouts .ligne .boutons a .dl {
         display: none;
     }
 
-    .ajouts .liste-ajouts .ligne .download button.tel {
+    .ajouts .liste-ajouts .ligne .boutons a .dl_tel {
         display: block;
     }
 }

@@ -4,9 +4,6 @@
     
     if(!empty($_POST)) {
         extract($_POST);
-
-        
-        
         if(isset($_POST['submit'])) {
 
             $valid = true;
@@ -48,7 +45,7 @@
             }
 
             if($valid) {
-                $insert_folder = $DB->prepare("INSERT INTO dossier (idUser, nomDossier, sousNomDossier) VALUES(?, ?, ?)");
+                $insert_folder = $DB->prepare("INSERT INTO dossier (idUser, nomDossier, sousNomDossier, fav) VALUES(?, ?, ?, 0)");
                 $insert_folder->execute(array($_SESSION['utilisateur'][0], $nom, $sous_nom));
 
                 $erreur = '
