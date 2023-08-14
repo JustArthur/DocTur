@@ -79,7 +79,7 @@
                         <h5 class="prof"><?= $dossier['sousNomDossier'] ?></h5>
                         <?php if($dossier["fav"]==1) { ?>
                             <span class="material-icons-outlined star">star</span>
-                        <?php } ?>
+                        <?php }?>
                         <!-- <span class="material-icons-outlined menu">more_vert</span> -->
                         <h5 class="count"><?= $nbrFichiers ?></h5>
                     </div>

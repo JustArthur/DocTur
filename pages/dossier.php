@@ -74,6 +74,8 @@
                     <h5 class="prof"><?= $dossier['sousNomDossier'] ?></h5>
                     <?php if($dossier["fav"]==1) { ?>
                         <span class="material-icons-outlined star">star</span>
+                    <?php } else { ?>
+                        <span class="material-icons-outlined star">grade</span>
                     <?php } ?>
                 </div>
                 
