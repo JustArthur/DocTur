@@ -47,7 +47,7 @@
                     <input type="password" name="password" id="password" maxlength="32">
                     <span class="material-icons-outlined" onclick='toggle()'>visibility</span>
                 </div>
-                <a href="register.php">J'ai oublié mon mot de passe</a>
+                <a href="forgot_password.php">J'ai oublié mon mot de passe</a>
 
                 <input type="submit" name="connexion" value="Se connecter">
 
