@@ -21,9 +21,9 @@ body {
 }
 
 .left .logo span {
-    background: var(--c-linear-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--c-blue);
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
 }
 
 .left form {

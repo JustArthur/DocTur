@@ -9,6 +9,9 @@
 
     require_once('./src/info_user.php');
 
+    $erreur = "";
+    $pop = "";
+
     $dossier = $DB->prepare("SELECT * FROM dossier WHERE idDossier = ?");
     $dossier->execute(array($_GET['id']));
     $dossier = $dossier->fetch();
@@ -24,6 +27,51 @@
             $fav = $DB->prepare("UPDATE dossier SET fav = 1 WHERE idDossier = ?;");
             $fav->execute(array($_GET['id']));
         }
+    
+        if(isset($_POST['deleteFolder'])) {   
+            $pop = '<div class="popup">
+            <form action="" class="pop" method="post">
+                <h2>Voulez-vous supprimer ce dossier ainsi que les fichiers ?</h2>
+                <p>Cette action est irréversible.</p>
+                <input style="background: #ef233c;" type="submit" name="delete" value="Oui">
+                <input style="background: var(--c-blue);" type="submit" name="non" value="Non">
+                </form></div>';
+        }
+
+        if (isset($_POST['delete'])) {
+            $deleteJoin = $DB->prepare("DELETE FROM fichiers WHERE idDossier=?;");
+            $deleteJoin->execute([$_GET['id']]);
+
+            $deleteFolder = $DB->prepare("DELETE FROM dossier WHERE idDossier=?;");
+            $deleteFolder->execute([$_GET['id']]);
+
+            //delete en physique dossiers et fichiers
+
+            $erreur = '<ul class="notifications">
+                    <li class="toast success">
+                        <div class="column">
+                            <span class="material-icons-round icon-notif">check_circle</span>
+                            <span class="message-notif">Dossier supprimé avec succès.</span>
+                        </div>
+                        <span class="material-icons-outlined icon-notif close" onclick="remove()">close</span>
+                    </li>
+                </ul>
+                <script>
+                    const toast = document.querySelector(".toast");
+
+                    function hideToast() {
+                        setTimeout(function() {
+                            toast.classList.add("hide")
+                        }, 5000);
+                    }
+
+                    function remove() {
+                        toast.classList.add("hide");
+                    }
+
+                    hideToast();
+                </script>';
+        }
     }
 ?>
 
@@ -35,6 +83,7 @@
 
     <link rel="stylesheet" href="../css/pageFolder.css">
     <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/notification.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
@@ -48,6 +97,8 @@
 
     ?>
 
+    <?= $pop ?>
+    <?= $erreur ?>
     <section class="global">
         <header>
             <form class="search" action="" method="post">
@@ -86,7 +137,7 @@
                     <input class="fav" name="fav" type="submit" value="Favori">
                     <?php } ?>
                     <input class="up" type="submit" value="Modifier le dossier">
-                    <input class="del" type="submit" value="Supprimer le dossier">
+                    <input class="del" type="submit" name="deleteFolder" value="Supprimer le dossier">
                 </form>
             </div>
         </div>

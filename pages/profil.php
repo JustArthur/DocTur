@@ -12,6 +12,68 @@
     $dossier_user = $DB->prepare("SELECT * FROM dossier WHERE idUser = ?");
     $dossier_user->execute(array($_SESSION['utilisateur'][0]));
     $dossier_user = $dossier_user->fetchAll();
+
+    $erreur = "";
+
+    if(!empty($_POST)) {
+        extract($_POST);
+        if(isset($_POST['newPhoto'])) {
+            if(isset($_FILES['photo']) && !empty($_FILES['photo']['name'])) {
+                    
+                $extension = array('png');
+    
+                $upload = strtolower(substr(strchr($_FILES['photo']['name'], '.'), 1));
+    
+                if(in_array($upload, $extension)) {
+                    $chemin =  '../images/private/utilisateurs/' . $_SESSION['utilisateur'][1] . '/';
+    
+                    if(!is_dir($chemin)) {
+                        mkdir($chemin);
+                    }
+    
+                    $file = $_SESSION['utilisateur'][1] .'_avatar.'. $upload;
+    
+                    $chemin_final = $chemin . $file;
+                    
+                    $res_file = move_uploaded_file($_FILES['photo']['tmp_name'], $chemin_final);
+
+                    if(is_readable($chemin_final)) {
+                        $insert_file = $DB->prepare("UPDATE utilisateurs SET avatar=? WHERE id=?;");
+                        $insert_file->execute(array($file, $_SESSION['utilisateur'][0]));
+
+                        // header('refresh:0');
+                        // exit;
+                    }
+                }
+                else {
+                    $erreur = '<ul class="notifications">
+                        <li class="toast error">
+                            <div class="column">
+                                <span class="material-symbols-rounded icon-notif">error</span>
+                                <span class="message-notif">Mauvais format de fichier</span>
+                            </div>
+                            <span class="material-symbols-rounded icon-notif close" onclick="remove()">close</span>
+                        </li>
+                    </ul>
+                    <script>
+                        const toast = document.querySelector(".toast");
+
+                        function hideToast() {
+                            setTimeout(function() {
+                                toast.classList.add("hide")
+                            }, 5000);
+                        }
+
+                        function remove() {
+                            toast.classList.add("hide");
+                        }
+
+                        hideToast();
+                    </script>';
+                }
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +85,7 @@
     <link rel="stylesheet" href="../css/panel.css">
     <link rel="stylesheet" href="../css/profil.css">
     <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/notification.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
@@ -37,6 +100,7 @@
     ?>
 
     <section class="global">
+        <?= $erreur ?>
         <div class="compte">
             <h1 class="titre">Mon profil</h1>
             <div class="banniere">

@@ -22,7 +22,7 @@
 
         $email = htmlspecialchars($email, ENT_QUOTES);
 
-        $sql = $DB->prepare('SELECT email FROM users WHERE email = ?');
+        $sql = $DB->prepare('SELECT email FROM utilisateurs WHERE email = ?');
         $sql->execute([$email]);
 
         return $sql;
@@ -32,7 +32,7 @@
         $DBB = new connexionDB();
         $DB = $DBB->DB();
         
-        $sql = $DB->prepare('UPDATE users set reset_token = ? WHERE email = ?');
+        $sql = $DB->prepare('UPDATE utilisateurs set token = ? WHERE email = ?');
         $sql->execute([$token, $email]);
 
         return $sql;
@@ -51,6 +51,7 @@
 
             if(isset($select_mail['email'])) {
 
+                $to = "wayzzy59@gmail.com";
                 $subject = 'Changer le mot de passe de votre compte DocTur';
                 $message = 'Bonjour, vous avez fait une demande pour changer votre mot de passe, merci de cliquer sur ce lien : "http://127.0.0.1/DocTur/forgot_password.php?token='. $_SESSION['user_token'];
     
