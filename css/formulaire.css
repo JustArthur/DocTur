@@ -55,7 +55,7 @@ body {
     text-decoration: underline;
 }
 
-.left form #identifiant, #password, #mail {
+.left form #identifiant, #password, #mail, #conf_password {
     margin: 10px auto;
     display: flex;
     padding: 20px;

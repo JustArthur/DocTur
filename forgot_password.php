@@ -38,6 +38,10 @@
         return $sql;
     }
 
+    function sendMail($to, $subject, $message, $headers) {
+        mail($to, $subject, $message, $headers);
+    }
+
     $_SESSION['user_token'] = generateToken();
 
     if(!empty($_POST)) {
@@ -51,20 +55,21 @@
 
             if(isset($select_mail['email'])) {
 
-                $to = "wayzzy59@gmail.com";
                 $subject = 'Changer le mot de passe de votre compte DocTur';
-                $message = 'Bonjour, vous avez fait une demande pour changer votre mot de passe, merci de cliquer sur ce lien : "http://127.0.0.1/DocTur/forgot_password.php?token='. $_SESSION['user_token'];
+                $message = 'Bonjour, vous avez fait une demande pour changer votre mot de passe, merci de cliquer sur ce lien : "http://127.0.0.1/DocTur/new_password.php?token='. $_SESSION['user_token'];
     
                 $headers = "Content-Type: text/plain; charset=utf-8\r\n";
                 $headers .= "From: wayzzy59@gmail.com\r\n";
 
-                if(mail($to, $subject, $message, $headers)) {
+                if(sendMail($email, $subject, $message, $headers)) {
                     $erreur = "Le mail à bien été envoyé à l'adresse " . $email;
                 } else {
-                    $erreur = "Impossible d'envoyer le mail.";
+                    $erreur = "Impossible d'envoyé le mail.";
                 }
             }
         }
+
+        exit();
     }
 ?>
 

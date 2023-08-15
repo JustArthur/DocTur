@@ -1,21 +1,41 @@
 <?php
     error_reporting(E_ALL);
     ini_set("display_errors", 1);
-    include_once('../../include.php');
+    include_once('include.php');
 
-    if(empty($_GET['token'])) {
-        header('Location: ' . ROOT_PATH);
-        exit();
-    }
+    // if(empty($_GET['token'])) {
+    //     header('Location: index.php');
+    //     exit();
+    // }
 
-    if($_GET['token'] != $_SESSION['user_token']) {
-        header('Location: ' . ROOT_PATH);
-        exit();
-    }
+    // if($_GET['token'] != $_SESSION['user_token']) {
+    //     header('Location: index.php');
+    //     exit();
+    // }
 
     if(!empty($_POST)) {
         extract($_POST);
         if(isset($_POST['new_password'])) {
+
+            function getUserByToken($token) {
+                $DBB = new connexionDB();
+                $DB = $DBB->DB();
+        
+                $sql = $DB->prepare('SELECT reset_token, user_id, email, password FROM users WHERE reset_token = ?');
+                $sql->execute([$token]);
+        
+                return $sql;
+            }
+        
+            function changePassword($crypt_password, $userId) {
+                $DBB = new connexionDB();
+                $DB = $DBB->DB();
+        
+                $sql = $DB->prepare('UPDATE users SET password = ?, reset_token = "" WHERE user_id = ?');
+                $sql->execute([$crypt_password, $userId]);
+                
+                return $sql;
+            }
 
             $valid = true;
 
@@ -57,7 +77,7 @@
         
                         sendMail($user_info['email'], $subject, $message, $headers);
     
-                        header('Location: ' . ROOT_PATH);
+                        header('Location: index.php');
                         exit();
                     }
                 }
@@ -69,47 +89,47 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../../styles/login_register.css">
+    <?php require_once('include/link.php') ?>
+
+    <link rel="stylesheet" href="css/formulaire.css">
+    <link rel="stylesheet" href="css/notification.css">
+    <link rel="shortcut icon" href="./images/public/DT.png" type="image/x-icon">
     <title>Changement du mot de passe</title>
+
 </head>
 <body>
-    <div class="left-container">
-        <div class="container">
+    <div class="left">
+        <h1 class="logo">DOC<span>TUR</span></h1>
+        <form method="post">
+            <h1 class="titre">Rénitialiser mon mot de passe</h1>
+            <p class="description">Renseignez votre nouveau mot de passe.</p>
 
-            <h3 class="logo">Connect<span class="bleu">Event</span></h3>
+            <?php if(isset($erreur)) { echo $erreur; } ?>
 
-            <div class="textes">
-                <h2 class="titre">Rénitialiser mon mot de passe</h2>
-                <p class="description">Renseignez votre nouveau mot de passe.</p>
-            </div>
+            <label for="password">Mot de passe</label>
+            <input required type="password" id="password" name="password" placeholder="Entrez votre mot de passe">
 
-            <form method="post" class="formulaire">
+            <label for="conf_password">Confirmer le mot de passe</label>
+            <input required type="password" id="conf_password" name="conf_password" placeholder="Entrez de nouveau votre mot de passe">
 
-                <?php if(isset($erreur)) { ?><div class="erreur"><?= $erreur ?></div> <?php } ?>
+            <input type="submit" name="new_password" value="Modifier mon mot de passe">
 
-                <div class="input-box">
-                    <label for="password" class="text-label">Mot de passe</label>
-                    <input required type="password" id="password" name="password" class="input" placeholder="Entrez votre mot de passe">
-                </div>
-
-                <div class="input-box">
-                    <label for="conf_password" class="text-label">Confirmer le mot de passe</label>
-                    <input required type="password" id="conf_password" name="conf_password" class="input" placeholder="Entrez de nouveau votre mot de passe">
-                </div>
-
-                <input type="submit" name="new_password" value="Modifier mon mot de passe" class="submit-input">
-
-                <p class="info-compte">Je me souviens de mon mot de passe. <a href="../../login">Se connecter</a></p>
-            </form>
-        </div>
+            <p class="account">Je me souviens de mon mot de passe. <a href="index.php">Se connecter</a></p>
+        </form>
     </div>
 
-    <div class="right-container">
-        <img src="<?= ROOT_PATH ?>public/public_img/bg-login-register.jpg">
+    <div class="right">
+        <div class="desc">
+            <div class="slogan">
+                <div class="slog-item">
+                    <svg class="play-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>
+                    <h1>La plateforme</h1>
+                </div>
+                <div class="slog-item"><h1>de stockage</h1></div>
+                <div class="slog-item"><h1><span>en ligne.</span></h1></div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
