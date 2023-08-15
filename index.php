@@ -40,11 +40,11 @@
                 <label for="identifiant">Votre identifiant</label>
 
                 <?php if(isset($erreur)) { echo $erreur; } ?>
-                <input type="text" name="identifiant" id="identifiant" maxlength="20">
+                <input type="text" name="identifiant" id="identifiant" placeholder="Entrez votre identifiant" maxlength="20">
 
                 <label for="password">Votre mot de passe</label>
                 <div class="div-input">
-                    <input type="password" name="password" id="password" maxlength="32">
+                    <input type="password" name="password" placeholder="Entrez votre mot de passe" id="password" maxlength="32">
                     <span class="material-icons-outlined" onclick='toggle()'>visibility</span>
                 </div>
                 <a href="forgot_password.php">J'ai oublié mon mot de passe</a>

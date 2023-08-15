@@ -51,11 +51,11 @@
 
             if(isset($select_mail['email'])) {
 
-                $subject = 'Changer le mot de passe de votre compte ConnectEvent';
+                $subject = 'Changer le mot de passe de votre compte DocTur';
                 $message = 'Bonjour, vous avez fait une demande pour changer votre mot de passe, merci de cliquer sur ce lien : "http://127.0.0.1/DocTur/forgot_password.php?token='. $_SESSION['user_token'];
     
                 $headers = "Content-Type: text/plain; charset=utf-8\r\n";
-                $headers .= "From: maxxxozou@gmail.com\r\n";
+                $headers .= "From: wayzzy59@gmail.com\r\n";
 
                 if(mail($to, $subject, $message, $headers)) {
                     $erreur = "Le mail à bien été envoyé à l'adresse " . $email;
@@ -70,42 +70,46 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./css/password.css">
-    <title>J'ai oublié mon mot de passe</title>
+    <?php require_once('include/link.php') ?>
+
+    <link rel="stylesheet" href="css/formulaire.css">
+    <link rel="stylesheet" href="css/notification.css">
+    <link rel="shortcut icon" href="./images/public/DT.png" type="image/x-icon">
+
+    <title>Mot de passe oublié</title>
+
 </head>
 <body>
-    <div class="left-container">
-        <div class="container">
+    <div class="left">
+        <h1 class="logo">DOC<span>TUR</span></h1>
+        <form method="post">
 
-            <h3 class="logo">Connect<span class="bleu">Event</span></h3>
+            <h1 class="titre">Mot de passe oublié ?</h2>
+            <p class="description">Pas de soucis un mail vous sera envoyé pour la rénitialisation de votre mot de passe.</p>
 
-            <div class="textes">
-                <h2 class="titre">Mot de passe oublié ?</h2>
-                <p class="description">Pas de soucis un mail vous sera envoyé pour la rénitialisation de votre mot de passe</p>
-            </div>
+            <?php if(isset($erreur)) { echo $erreur; } ?>
 
-            <form method="post" class="formulaire">
+            <label for="email">Adresse mail</label>
+            <input required type="email" id="mail" name="email" placeholder="Entrez votre adresse mail">
 
-                <?php if(isset($erreur)) { ?><div class="erreur"><?= $erreur ?></div> <?php } ?>
+            <input type="submit" name="send_mail" value="Envoyer le mail">
 
-                <div class="input-box">
-                    <label for="email" class="text-label">Adresse mail</label>
-                    <input required type="email" id="email" name="email" class="input" placeholder="Entrez votre adresse mail">
-                </div>
-
-                <input type="submit" name="send_mail" value="Envoyer le mail" class="submit-input">
-
-                <p class="info-compte">Je me souviens de mon mot de passe. <a href="index.php">Se connecter</a></p>
-            </form>
-        </div>
+            <p class="account">Je me souviens de mon mot de passe. <a href="index.php">Se connecter</a></p>
+        </form>
     </div>
 
-    <div class="right-container">
-        <img src="">
+    <div class="right">
+        <div class="desc">
+            <div class="slogan">
+                <div class="slog-item">
+                    <svg class="play-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>
+                    <h1>La plateforme</h1>
+                </div>
+                <div class="slog-item"><h1>de stockage</h1></div>
+                <div class="slog-item"><h1><span>en ligne.</span></h1></div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
