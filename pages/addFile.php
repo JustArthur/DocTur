@@ -11,7 +11,7 @@
 
             if(isset($_FILES['file']) && !empty($_FILES['file']['name'])) {
 
-                $nomDossier = $DB->prepare("SELECT nomDossier FROM dossier WHERE idDossier = ? and idUser =?;");
+                $nomDossier = $DB->prepare("SELECT nomDossier, nbrFichiers FROM dossier WHERE idDossier = ? and idUser =?;");
                 $nomDossier->execute(array($_GET['id'], $_SESSION['utilisateur'][0]));
                 $nomDossier = $nomDossier->fetch();
                     
@@ -36,6 +36,12 @@
                 if(is_readable($chemin_final)) {
                     $insert_file = $DB->prepare("INSERT INTO fichiers (idDossier, nomFichier, cheminFichier, tailleFichier, dateAjout) VALUES(?, ?, ?, ?, ?)");
                     $insert_file->execute(array($_GET['id'], $file, $chemin_final, $_FILES['file']['size'], date('Y-m-d')));
+
+                    $updateNombre = intval($nomDossier['nbrFichiers']) + 1;
+
+                    $updateDossier = $DB->prepare("UPDATE dossier SET nbrFichiers = ? WHERE idDossier = ?;");
+                    $updateDossier->execute(array($updateNombre, $_GET['id']));
+
 
                     $erreur = '
                     <ul class="notifications">
