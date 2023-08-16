@@ -1,124 +1,5 @@
 @import url('initialisations.css');
 
-.barre-recherche {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    position: relative;
-}
-
-.barre-recherche form.search {
-    margin: auto;
-    display: flex;
-    width: 100%;
-    gap: 30px;
-}
-
-.barre-recherche form.search .div {
-    position: relative;
-}
-
-.barre-recherche form.search .div .barre {
-    width: 500px;
-    height: 55px;
-    background: #FFFFFF;
-    padding: 20px;
-    padding-left: 50px;
-    box-shadow: 5px 5px 20px rgba(199, 199, 199, 0.4);
-    border-radius: 10px;
-    outline: none;
-    border: none;
-}
-.barre-recherche form.search .div .barre:focus {
-    outline: solid 2px var(--c-blue);
-}
-
-
-.barre-recherche form.search .div .icon {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    color: var(--c-grey);
-}
-
-.barre-recherche form.search .div .btn-search {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background: var(--c-blue);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 25px;
-}
-
-
-.barre-recherche form.search .btn-search:hover {
-    background-color: var(--c-dark-blue);
-    transition: all 0.3s ease;
-}
-
-.barre-recherche .profil {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    padding: 5px;
-    gap: 8px;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.barre-recherche .profil .message {
-    width: 30px;
-    height: 30px;
-    position: relative;
-}
-
-.barre-recherche .profil .message svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-}
-
-.barre-recherche .profil .settings {
-    width: 30px;
-    height: 30px;
-    position: relative;
-}
-
-.barre-recherche .profil .settings svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-}
-
-.barre-recherche .profil .avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-.barre-recherche .profil .avatar img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    cursor: pointer;
-}
-
 .global .dossiers {
     margin: 20px auto 0;
     display: flex;
@@ -384,7 +265,7 @@
     gap: 10px;
 }
 
-.ajouts .liste-ajouts .ligne .boutons label {
+.ajouts .liste-ajouts .ligne .boutons a {
     display: flex;
     cursor: pointer;
     background: #3246D3;
@@ -398,7 +279,7 @@
     transition: 0.2s ease;
 }
 
-.ajouts .liste-ajouts .ligne .boutons label.supprimer {
+.ajouts .liste-ajouts .ligne .boutons a.supprimer {
     display: flex;
     cursor: pointer;
     background: var(--c-error);
@@ -412,22 +293,12 @@
     transition: 0.2s ease;
 }
 
-.ajouts .liste-ajouts .ligne .boutons label:hover {
+.ajouts .liste-ajouts .ligne .boutons a:hover {
     box-shadow: none;
     transition: 0.2s ease;
 }
 
-.ajouts .liste-ajouts .ligne .boutons input[type="submit"] {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-}
-
-.ajouts .liste-ajouts .ligne .boutons label .dl_tel, .ajouts .liste-ajouts .ligne .boutons label .sup_tel {
+.ajouts .liste-ajouts .ligne .boutons a .dl_tel, .ajouts .liste-ajouts .ligne .boutons a .sup_tel {
     display: none;
 }
 
@@ -451,11 +322,11 @@
 }
 
 @media screen and (max-width:675px) {
-    .ajouts .liste-ajouts .ligne .boutons label .dl_tel, .ajouts .liste-ajouts .ligne .boutons label .sup_tel {
+    .ajouts .liste-ajouts .ligne .boutons a .dl_tel, .ajouts .liste-ajouts .ligne .boutons a .sup_tel {
         display: block;
     }
 
-    .ajouts .liste-ajouts .ligne .boutons label .dl, .ajouts .liste-ajouts .ligne .boutons label .sup {
+    .ajouts .liste-ajouts .ligne .boutons a .dl, .ajouts .liste-ajouts .ligne .boutons a .sup {
         display: none;
     }
 }

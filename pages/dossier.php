@@ -162,22 +162,6 @@
 
                         foreach ($fichiers as $file) {
 
-                            if(!empty($_POST)) {
-                                extract($_POST);
-                                if (isset($_POST['telecharger'])) {
-                                    // header("Content-Disposition: attachment; filename=" . basename($downloadFilePath));
-                                    // header("Content-Type: application/octet-stream");
-                                    // header("Content-Length: " . filesize($downloadFilePath));
-                                    // readfile($downloadFilePath);
-                                    // exit;
-                                }
-                        
-                                if (isset($_POST['supprimer'])) {
-                                    // $chemin = "../images/private/utilisateurs/".$_SESSION['utilisateur'][1]."/".$file['nomDossier']."/".$file['nomFichier'];
-                                    // rmdir($chemin);
-                                }
-                            }
-
                             $tailleFichier = formatSizeUnits($file['tailleFichier']);
                 ?>
                     <div class="ligne">
@@ -185,26 +169,17 @@
                         <div class="titre"><?= $file['nomFichier']?></div>
                         <div class="taille"><?= $tailleFichier?></div>
                         <div class="date">Ajouté le <span style="color: var(--c-blue);"> <?= $file['dateAjout']?></span></div>
-                        <form class="boutons" method="post">
-
-                            <label for="telecharger" class="custom-label">
-                                <input type="submit" name="telecharger" value="">
-                                <!-- <input type="hidden" name="downloadFilePath" value="<?= $file['cheminFichier'] ?>"> -->
+                        <div class="boutons">
+                            <a href="<?= $file['cheminFichier']?>" download>
                                 <span class="dl">Télécharger</span>
                                 <span class="material-symbols-rounded dl_tel">cloud_download</span>
-                            </label>
-                            
-                            <label for="supprimer" class="custom-label supprimer">
-                                <input type="submit" class="supprimer" name="supprimer" value="">
-                                <span class="sup">Supprimer</span>
-                                <span class="material-symbols-rounded sup_tel">delete_forever</span>
-                            </label>
+                            </a>
 
-                            <!-- <input type="submit" name="telecharger" value="Télécharger">
-                            <input type="submit" class="supprimer" name="supprimer" value="Supprimer"> -->
-                            
-                            
-                        </form>
+                            <a href="supprimer_fichiers.php?file=<?= $file['idFichier']?>&dossier=<?= $file['idDossier']?>" class="supprimer">
+                                <span class="dl">Supprimer</span>
+                                <span class="material-symbols-rounded sup_tel">delete_forever</span>
+                            </a>
+                        </div>
                     </div>
                 <?php 
                     }} 
